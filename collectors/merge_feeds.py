@@ -1,12 +1,12 @@
 """
 Merge all COCOM collector outputs into a single unified feed.
-Outputs: site/data/feed.json (combined, sorted by date)
+Outputs: docs/data/feed.json (combined, sorted by date)
 """
 
 import json
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.parent / "site" / "data"
+DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 FEED_FILES = ["centcom.json", "eucom.json", "indopacom.json", "africom.json", "stratcom.json"]
 OUTPUT = DATA_DIR / "feed.json"
 MAX_ITEMS = 100

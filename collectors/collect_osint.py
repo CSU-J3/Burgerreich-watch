@@ -17,7 +17,7 @@ WHAT STAYS MANUAL:
   - Contractor wartime surge numbers (no source)
   - Your flash brief bullets
 
-Outputs to site/data/:
+Outputs to docs/data/:
   fleet.json, casualties.json, losses.json, posture.json, 
   commanders.json, doomsday.json, collector_status.json
 """
@@ -36,7 +36,7 @@ except ImportError:
     print("[COLLECTOR] pip install requests beautifulsoup4 lxml --break-system-packages")
     sys.exit(1)
 
-DATA_DIR = Path(__file__).parent.parent / "site" / "data"
+DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 HEADERS = {"User-Agent": "BURGERREICH-watch/2.0 (OSINT; dasdemarc.substack.com)"}

@@ -8,7 +8,7 @@ import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.parent / "site" / "data"
+DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 MAX_ITEMS = 50  # Keep last 50 items per feed

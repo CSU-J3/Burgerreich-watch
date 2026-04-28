@@ -12,7 +12,7 @@ Part of [das_DEMARC](https://dasdemarc.substack.com).
 ## Structure
 
 ```
-site/
+docs/
   index.html          # Dashboard (single-file, GitHub Pages)
   data/               # Collector JSON output (auto-updated)
     feed.json          # Merged feed from all collectors
@@ -48,7 +48,7 @@ collectors/
 
 Collectors run automatically every 6 hours via GitHub Actions.
 
-They pull RSS feeds from combatant command websites, classify items by type (naval, air, ground, posture, exercise, alert), and output JSON to `site/data/`.
+They pull RSS feeds from combatant command websites, classify items by type (naval, air, ground, posture, exercise, alert), and output JSON to `docs/data/`.
 
 The dashboard loads `data/feed.json` via background fetch. If the fetch fails (e.g., local preview without a server), it falls back to embedded seed data.
 
