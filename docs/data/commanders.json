@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-29T21:22:42.456638+00:00",
+  "updated": "2026-04-29T21:32:00.890531+00:00",
   "commanders": {
     "centcom": {
       "name": "Admiral Brad Cooper",
@@ -10,8 +10,9 @@
       "url": "https://www.eucom.mil/about-the-command/leadership/commander"
     },
     "indopacom": {
-      "name": "Admiral Samuel Paparo",
-      "url": "https://www.pacom.mil/Leadership/Commander/"
+      "name": null,
+      "url": "https://www.pacom.mil/Leadership/Commander/",
+      "notes": "fetch failed: Rung 1+2 both failed: rung1=403 Client Error: Forbidden for url: https://www.pacom.mil/Leadership/Commander/; rung2=Failed to perform, curl:"
     },
     "northcom": {
       "name": "General Gregory M. Guillot",

@@ -148,6 +148,42 @@ def _plausible_int(value, lo, hi):
     return value if lo <= n <= hi else None
 
 
+# Helpers for the USNI fleet tracker article. The page renders ship paragraphs
+# with the name as an inline anchor element; BeautifulSoup.get_text injects
+# nbsp + newline around it, leaving artifacts like "USS\xa0\nGeorge Washington".
+# Status used to be inferred from a ±200-char window around the regex match,
+# which falsely tagged Ford as HOMEPORT because USS Ross's "homeported at
+# Naval Station Norfolk" sat ~70 chars before Ford's match.
+_FLEET_HOMEPORTS = ("norfolk", "san diego", "bremerton", "yokosuka", "everett",
+                    "kings bay", "mayport", "pearl harbor")
+
+
+def _clean_ship_name(name):
+    return re.sub(r'\s+', ' ', name.replace('\xa0', ' ')).strip()
+
+
+def _clean_location(loc):
+    loc = re.sub(r'\s+', ' ', loc.replace('\xa0', ' ')).strip()
+    loc = re.sub(r'^(?:to|from|near|off|at|in)\s+', '', loc, flags=re.IGNORECASE)
+    return loc[:80]
+
+
+def _ship_status(verb, loc):
+    """Infer deployment status from the captured verb + location text only.
+    Avoids the prior sliding-window approach which leaked context across ships."""
+    loc_l = loc.lower()
+    verb_l = (verb or "").lower()
+    if "maintenance" in loc_l or "overhaul" in loc_l or "drydock" in loc_l:
+        return "MAINTENANCE"
+    if "en route" in loc_l or "transit" in loc_l:
+        return "TRANSIT"
+    if verb_l == "departed":
+        return "DEPLOYED"
+    if any(p in loc_l for p in _FLEET_HOMEPORTS) and verb_l in ("returned", "arrived", "is", "was"):
+        return "HOMEPORT"
+    return "DEPLOYED"
+
+
 # ══════════════════════════════════════════════════════════════
 # 1. FLEET POSITIONS — USNI Fleet Tracker
 # ══════════════════════════════════════════════════════════════
@@ -180,58 +216,72 @@ def collect_fleet():
     print(f"  Latest tracker: {link}")
 
     try:
-        body = BeautifulSoup(fetch(link), "lxml").get_text(separator="\n")
+        soup = BeautifulSoup(fetch(link), "lxml")
     except Exception as e:
         save("fleet.json", _empty_fleet(link, f"article fetch failed: {str(e)[:140]}"))
         print(f"  ✗ rung 3 (article fetch failed: {str(e)[:80]})")
         return
-    
+
+    # Scope to <article> tag — USNI's article body is wrapped, and everything
+    # outside it (comments, related-articles sidebar, footer) is noise that
+    # would otherwise contaminate the regex sweep.
+    article_root = soup.find("article") or soup
+    body = article_root.get_text(separator="\n")
+
     carriers = []
-    # Pattern: "USS [Name] (CVN-XX) is [in/operating/underway] [location]"
+    # Groups: 1=name, 2=hull, 3=verb, 4=location.
     for m in re.finditer(
-        r'(?:Aircraft\s+)?(?:[Cc]arrier\s+)?(USS\s+[\w\.\s]+?)\s*\((CVN-\d+)\)\s+(?:is|was|arrived|departed|returned|operating)\s+(?:\w+\s+)?(?:in\s+)?(?:the\s+)?([\w\s,\-]+?)(?:\.|,|$)',
+        r'(?:Aircraft\s+)?(?:[Cc]arrier\s+)?(USS\s+[\w\.\s]+?)\s*\((CVN-\d+)\)\s+(is|was|arrived|departed|returned|operating)\s+(?:\w+\s+)?(?:in\s+)?(?:the\s+)?([\w\s,\-]+?)(?:\.|,|$)',
         body, re.MULTILINE
     ):
         hull = m.group(2).strip()
         if not any(c["hull"] == hull for c in carriers):
-            loc = m.group(3).strip()[:60]
-            ctx = body[max(0,m.start()-200):m.end()+200].lower()
-            status = "DEPLOYED"
-            if "homeport" in ctx or ("arrived" in ctx and ("norfolk" in loc.lower() or "san diego" in loc.lower() or "bremerton" in loc.lower() or "yokosuka" in loc.lower())):
-                status = "HOMEPORT"
-            elif "maintenance" in ctx or "overhaul" in ctx:
-                status = "MAINTENANCE"
-            elif "en route" in ctx or "transit" in ctx or ("underway" in ctx and "deploy" not in ctx):
-                status = "TRANSIT"
-            carriers.append({"name": m.group(1).strip(), "hull": hull, "location": loc, "status": status})
-    
+            loc = _clean_location(m.group(4))
+            carriers.append({
+                "name": _clean_ship_name(m.group(1)),
+                "hull": hull,
+                "location": loc,
+                "status": _ship_status(m.group(3), loc),
+            })
+
     args = []
     for m in re.finditer(
-        r'(USS\s+[\w\.\s]+?)\s*\((LH[AD]-\d+)\)\s+(?:is|was|arrived|departed|operating)\s+(?:\w+\s+)?(?:in\s+)?(?:the\s+)?([\w\s,\-]+?)(?:\.|,|$)',
+        r'(USS\s+[\w\.\s]+?)\s*\((LH[AD]-\d+)\)\s+(is|was|arrived|departed|operating)\s+(?:\w+\s+)?(?:in\s+)?(?:the\s+)?([\w\s,\-]+?)(?:\.|,|$)',
         body, re.MULTILINE
     ):
         hull = m.group(2).strip()
         if not any(a["hull"] == hull for a in args):
-            loc = m.group(3).strip()[:60]
-            ctx = body[max(0,m.start()-200):m.end()+200].lower()
-            status = "DEPLOYED" if ("deploy" in ctx or "operating" in ctx or "en route" in ctx) else "HOMEPORT"
-            args.append({"name": m.group(1).strip(), "hull": hull, "location": loc, "status": status})
-    
-    # Battle force numbers
-    bf = re.search(r'Total Battle Force.*?(\d+)\s*\(', body)
-    dep = re.search(r'Deployed.*?(\d+)', body)
-    uw = re.search(r'Underway.*?(\d+)', body)
-    
+            loc = _clean_location(m.group(4))
+            args.append({
+                "name": _clean_ship_name(m.group(1)),
+                "hull": hull,
+                "location": loc,
+                "status": _ship_status(m.group(3), loc),
+            })
+
+    # Battle force / deployed counts. USNI renders a stat table that
+    # BeautifulSoup flattens to "Total Battle Force | | | Deployed | | |
+    # Underway | ... | 291 | | | (USS 233, USNS 58) | | | 108 | | | (USS 78,
+    # USNS 30)". The integers we want are the bare values immediately before
+    # "(USS \d+," parenthetical breakdowns; numbers inside the parens are
+    # subtotals, not what the dashboard surfaces.
+    table_nums = re.findall(r'(\d{2,4})\s*\|*\s*\(USS\s+\d+', body)
+    bf = table_nums[0] if len(table_nums) >= 1 else None
+    dep = table_nums[1] if len(table_nums) >= 2 else None
+    # Underway is reported in a different column shape and isn't reliably
+    # extractable from the flattened text — leave null rather than guess.
+    uw = None
+
     result = {
         "updated": NOW, "source_url": link,
-        "battle_force": bf.group(1) if bf else None,
-        "deployed": dep.group(1) if dep else None,
-        "underway": uw.group(1) if uw else None,
+        "battle_force": bf,
+        "deployed": dep,
+        "underway": uw,
         "carriers": carriers, "args": args
     }
-    
+
     save("fleet.json", result)
-    print(f"  ✓ {len(carriers)} carriers, {len(args)} ARGs")
+    print(f"  ✓ {len(carriers)} carriers, {len(args)} ARGs, BF={bf}, dep={dep}")
 
 
 # ══════════════════════════════════════════════════════════════
