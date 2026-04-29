@@ -106,6 +106,48 @@ def save(filename, data):
     print(f"  → Saved: {path}")
 
 
+# Wikipedia article bodies end with sections that are pure citation/footnote
+# noise. Numbers buried in those sections frequently match casualty/troop
+# regexes by accident (e.g. a footnote titled "12 US troops wounded in
+# Iranian strike on Saudi base" being matched as cumulative WIA). Stripping
+# these sections before regex matching prevents that whole class of misfire.
+_WIKI_NOISE_HEADINGS = ("References", "Notes", "Citations", "External links",
+                        "See also", "Further reading", "Bibliography", "Sources")
+
+
+def _strip_wiki_noise(soup):
+    """Mutate a Wikipedia BeautifulSoup tree to remove the first noise section
+    heading (h2/h3) and every sibling after it within the same parent.
+
+    Operates on the soup tree rather than text because Wikipedia's table of
+    contents lists every section name (including "References", "See also")
+    as plain text — text-level matching catches the TOC entry, not the real
+    heading 100k+ chars later.
+    """
+    for heading in soup.find_all(['h2', 'h3']):
+        text = re.sub(r'\[edit\]\s*$', '', heading.get_text().strip()).strip()
+        if text in _WIKI_NOISE_HEADINGS:
+            sib = heading.find_next_sibling()
+            while sib:
+                nxt = sib.find_next_sibling()
+                sib.decompose()
+                sib = nxt
+            heading.decompose()
+            return soup
+    return soup
+
+
+def _plausible_int(value, lo, hi):
+    """Return value unchanged if it parses to an int in [lo, hi]; else None."""
+    if value is None:
+        return None
+    try:
+        n = int(re.sub(r'[^\d]', '', str(value)))
+    except (ValueError, TypeError):
+        return None
+    return value if lo <= n <= hi else None
+
+
 # ══════════════════════════════════════════════════════════════
 # 1. FLEET POSITIONS — USNI Fleet Tracker
 # ══════════════════════════════════════════════════════════════
@@ -197,37 +239,71 @@ def collect_fleet():
 # ══════════════════════════════════════════════════════════════
 def collect_casualties():
     print("\n[2/6] CASUALTIES — Wikipedia")
-    
-    body = BeautifulSoup(fetch("https://en.wikipedia.org/wiki/2026_Iran_war"), "lxml").get_text()
-    
+
+    url = "https://en.wikipedia.org/wiki/2026_Iran_war"
+    try:
+        soup = BeautifulSoup(fetch(url), "lxml")
+    except Exception as e:
+        # Source unreachable. Emit null fields + notes; drop operations entirely
+        # so the dashboard's seed data carries the section. We do NOT bake in
+        # fixture values here — fake-live numbers are worse than missing data.
+        save("casualties.json", {
+            "updated": NOW,
+            "source": "Wikipedia / CENTCOM",
+            "source_url": url,
+            "us_kia_confirmed": None,
+            "us_wia_confirmed": None,
+            "notes": f"source unavailable: {str(e)[:140]}",
+        })
+        print(f"  ✗ rung 3 (fetch failed: {str(e)[:80]})")
+        return
+
+    body = _strip_wiki_noise(soup).get_text()
+
     # Find US KIA
     kia = None
-    for p in [r'(\d+)\s+(?:U\.?S\.?|American|United States)\s+(?:service members?|soldiers?|troops?|military personnel)\s+(?:have been\s+)?killed',
+    for p in [r'(\d+)\s+(?:U\.?S\.?|American|United States)\s+(?:service members?|soldiers?|troops?|military personnel|servicemen)\s+(?:have been\s+|had been\s+)?killed',
               r'(\d+)\s+killed\s+in\s+action',
               r'(\d+)\s+US\s+(?:troops?\s+)?(?:have\s+)?(?:been\s+)?killed']:
         m = re.search(p, body, re.IGNORECASE)
         if m: kia = m.group(1); break
-    
+
     # Find US WIA — tight patterns first, broad last
     wia = None
-    for p in [r'(\d+[\+]?)\s+(?:U\.?S\.?|American)\s+(?:service members?|military personnel|troops?)\s+(?:have been\s+)?(?:wounded|injured)',
-              r'approximately\s+(\d+[\+]?)\s+(?:U\.?S\.?|American)\s+.*?(?:wounded|injured)',
+    for p in [r'(\d+[\+]?)\s+(?:U\.?S\.?|American)\s+(?:service members?|military personnel|troops?|servicemen)\s+(?:have been\s+|had been\s+)?(?:wounded|injured)',
+              r'(?:about|approximately)\s+(\d+[\+]?)\s+(?:U\.?S\.?|American)\s+\w+\s+(?:have|had)\s+been\s+(?:wounded|injured)',
               r'(\d+[\+]?)\s+(?:U\.?S\.?|American)\s+.*?(?:wounded|injured)']:
         m = re.search(p, body, re.IGNORECASE)
         if m: wia = m.group(1); break
-    
+
+    # Plausibility gate: cumulative US KIA/WIA in any single conflict above
+    # 10,000 would be unprecedented since Vietnam — anything higher is almost
+    # certainly a regex hit on an unrelated number (year, page count, etc.).
+    out_of_range = []
+    if kia is not None and _plausible_int(kia, 0, 10000) is None:
+        out_of_range.append(f"kia={kia!r}")
+        kia = None
+    if wia is not None and _plausible_int(wia, 0, 10000) is None:
+        out_of_range.append(f"wia={wia!r}")
+        wia = None
+
+    # Epic Fury numbers come from `kia`/`wia` only — no fallback. If parsing
+    # fails the entry still emits with nulls; the dashboard merges over seed.
+    # Tower 22 and Syria entries are historical (2024–2025), not live.
     result = {
         "updated": NOW,
         "source": "Wikipedia / CENTCOM",
         "us_kia_confirmed": kia,
         "us_wia_confirmed": wia,
         "operations": [
-            {"name": "Operation Epic Fury", "kia": kia or "13", "wia": wia or "348", "period": "Feb 28, 2026–present"},
+            {"name": "Operation Epic Fury", "kia": kia, "wia": wia, "period": "Feb 28, 2026–present"},
             {"name": "Tower 22 (Jordan)", "kia": "3", "wia": "47", "period": "Jan 28, 2024"},
             {"name": "Syria ISIS Ambush", "kia": "3", "wia": "3", "period": "Dec 14, 2025"},
         ]
     }
-    
+    if out_of_range:
+        result["notes"] = "values out of plausible range (0-10000); nulled: " + ", ".join(out_of_range)
+
     save("casualties.json", result)
     print(f"  ✓ KIA: {kia}, WIA: {wia}")
 
@@ -283,12 +359,25 @@ def collect_losses():
 # ══════════════════════════════════════════════════════════════
 def collect_posture():
     print("\n[4/6] TROOP POSTURE — Wikipedia buildup page")
-    
-    body = BeautifulSoup(
-        fetch("https://en.wikipedia.org/wiki/2026_United_States_military_buildup_in_the_Middle_East"), 
-        "lxml"
-    ).get_text()
-    
+
+    url = "https://en.wikipedia.org/wiki/2026_United_States_military_buildup_in_the_Middle_East"
+    try:
+        soup = BeautifulSoup(fetch(url), "lxml")
+    except Exception as e:
+        # Source unreachable. Drop deployments_mentioned entirely so the
+        # dashboard's seed data carries the section.
+        save("posture.json", {
+            "updated": NOW,
+            "source": "Wikipedia — 2026 US military buildup in the Middle East",
+            "source_url": url,
+            "total_middle_east": None,
+            "notes": f"source unavailable: {str(e)[:140]}",
+        })
+        print(f"  ✗ rung 3 (fetch failed: {str(e)[:80]})")
+        return
+
+    body = _strip_wiki_noise(soup).get_text()
+
     # Find total troop count
     total = None
     for p in [r'(\d{2},?\d{3})\s+(?:American|U\.?S\.?)\s+troops',
@@ -316,13 +405,23 @@ def collect_posture():
             ctx = body[max(0,m.start()-50):m.end()+100].strip()[:120]
             deployments.append({"asset": name, "context": ctx})
     
+    # Plausibility gate: a US troop buildup in a single theater is realistically
+    # 1k–1M people. Anything outside that window is almost certainly a regex
+    # hit on a year, body count, dollar figure, etc.
+    posture_notes = None
+    if total is not None and _plausible_int(total, 1000, 1000000) is None:
+        posture_notes = f"total_middle_east={total!r} out of plausible range (1000-1000000); nulled"
+        total = None
+
     result = {
         "updated": NOW,
         "source": "Wikipedia — 2026 US military buildup in the Middle East",
         "total_middle_east": total,
         "deployments_mentioned": deployments
     }
-    
+    if posture_notes:
+        result["notes"] = posture_notes
+
     save("posture.json", result)
     print(f"  ✓ Total troops: {total}, deployments found: {len(deployments)}")
 

@@ -1,13 +1,13 @@
 {
-  "updated": "2026-04-29T20:06:26.208771+00:00",
+  "updated": "2026-04-29T21:22:42.456638+00:00",
   "source": "Wikipedia / CENTCOM",
   "us_kia_confirmed": null,
-  "us_wia_confirmed": "12",
+  "us_wia_confirmed": "140",
   "operations": [
     {
       "name": "Operation Epic Fury",
-      "kia": "13",
-      "wia": "12",
+      "kia": null,
+      "wia": "140",
       "period": "Feb 28, 2026\u2013present"
     },
     {
