@@ -1,37 +1,37 @@
 {
-  "updated": "2026-04-29T19:11:22.146783+00:00",
+  "updated": "2026-04-29T19:15:51.459770+00:00",
   "commanders": {
     "centcom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.centcom.mil/ABOUT-US/LEADERSHIP/",
+      "name": "Admiral Brad Cooper",
       "url": "https://www.centcom.mil/ABOUT-US/LEADERSHIP/"
     },
     "eucom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.eucom.mil/about-us/leadership/combatant-commander",
-      "url": "https://www.eucom.mil/about-us/leadership/combatant-commander"
+      "name": "Gen. Alexus G. Grynkewich",
+      "url": "https://www.eucom.mil/about-the-command/leadership/commander"
     },
     "indopacom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.pacom.mil/Leadership/Commander/",
+      "name": "Admiral Samuel Paparo",
       "url": "https://www.pacom.mil/Leadership/Commander/"
     },
     "northcom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.northcom.mil/Leadership/Commander/",
+      "name": "General Gregory M. Guillot",
       "url": "https://www.northcom.mil/Leadership/Commander/"
     },
     "africom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.africom.mil/about-the-command/leadership/commander",
+      "name": "Gen. Dagvin R.M. Anderson",
       "url": "https://www.africom.mil/about-the-command/leadership/commander"
     },
     "southcom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.southcom.mil/Leadership/Commander/",
-      "url": "https://www.southcom.mil/Leadership/Commander/"
+      "name": "Gen. Francis L. Donovan",
+      "url": "https://www.southcom.mil/About/Leadership/Commander/"
     },
     "stratcom": {
-      "name": "error: 403 Client Error: Forbidden for url: https://www.stratcom.mil/Leadership/Commander/",
-      "url": "https://www.stratcom.mil/Leadership/Commander/"
+      "name": "Admiral Richard Correll",
+      "url": "https://www.stratcom.mil/About/Leadership/Commander/"
     },
     "socom": {
-      "name": "error: 404 Client Error: NOT FOUND for url: https://www.socom.mil/about/leadership",
-      "url": "https://www.socom.mil/about/leadership"
+      "name": "Gen. Claude K. Tudor Jr",
+      "url": "https://www.socom.mil/Leadership"
     }
   }
 }

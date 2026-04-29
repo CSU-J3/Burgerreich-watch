@@ -29,31 +29,74 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Windows consoles default to cp1252 and choke on the arrow/check glyphs below.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except (AttributeError, OSError):
+    pass
+
 try:
     import requests
     from bs4 import BeautifulSoup
 except ImportError:
-    print("[COLLECTOR] pip install requests beautifulsoup4 lxml --break-system-packages")
+    print("[COLLECTOR] pip install -r collectors/requirements.txt")
     sys.exit(1)
+
+try:
+    from curl_cffi import requests as cffi_requests
+    HAVE_CURL_CFFI = True
+except ImportError:
+    HAVE_CURL_CFFI = False
 
 DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-HEADERS = {"User-Agent": "BURGERREICH-watch/2.0 (OSINT; dasdemarc.substack.com)"}
+# Rung 1: realistic browser headers. Mirrors Chrome 132 on macOS.
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+}
 NOW = datetime.now(timezone.utc).isoformat()
 
-def fetch(url, timeout=30, retries=2):
-    for attempt in range(retries + 1):
-        try:
-            resp = requests.get(url, headers=HEADERS, timeout=timeout)
-            resp.raise_for_status()
-            return resp.text
-        except requests.RequestException as e:
-            if attempt == retries:
-                raise
-            wait = 5 * (attempt + 1)
-            print(f"  ⟳ Retry {attempt+1}/{retries} in {wait}s — {e}")
-            time.sleep(wait)
+
+def fetch(url, timeout=30):
+    """
+    Fallback ladder for HTTP fetches.
+      Rung 1: requests.get with realistic browser headers.
+      Rung 2: curl_cffi with Chrome TLS fingerprint impersonation.
+    Caller applies Rung 3 (write null + notes) on raise.
+    """
+    rung1_err = None
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=timeout)
+        resp.raise_for_status()
+        return resp.text
+    except requests.RequestException as e:
+        rung1_err = e
+        print(f"  ↻ Rung 1 failed ({type(e).__name__}: {str(e)[:80]}); escalating to curl_cffi")
+
+    if not HAVE_CURL_CFFI:
+        raise RuntimeError(f"curl_cffi unavailable; rung 1 failed: {rung1_err}")
+
+    # Single profile: chrome131 cleared every .mil leadership page that 403'd on rung 1
+    # during a 2026-04-28 probe (centcom, indopacom, northcom, southcom, stratcom).
+    # No site has been observed where chrome131 fails but an older profile succeeds,
+    # so trying multiple profiles just doubles latency on a true rung-3 failure.
+    try:
+        resp = cffi_requests.get(url, headers=HEADERS, timeout=timeout, impersonate="chrome131")
+        resp.raise_for_status()
+        return resp.text
+    except Exception as rung2_err:
+        raise RuntimeError(f"Rung 1+2 both failed: rung1={rung1_err}; rung2={rung2_err}")
 
 def save(filename, data):
     path = DATA_DIR / filename
@@ -271,41 +314,94 @@ def collect_posture():
 # ══════════════════════════════════════════════════════════════
 # 5. COMMANDERS — .mil leadership pages
 # ══════════════════════════════════════════════════════════════
+BAD_NAME_TOKENS = ("FOIA", "USAF", "CSAF")
+
+def _validate_commander_name(name):
+    """Reject obvious garbage: newlines, error strings, all-caps acronyms, missing space."""
+    if not isinstance(name, str) or not name.strip():
+        return False
+    if "\n" in name or "\r" in name:
+        return False
+    if name.lower().startswith("error:"):
+        return False
+    if " " not in name.strip():
+        return False
+    for tok in BAD_NAME_TOKENS:
+        if tok in name:
+            return False
+    return True
+
+
 def collect_commanders():
     print("\n[5/6] COMMANDERS — .mil leadership pages")
-    
+
+    # URL paper trail. Each replacement was verified by probing the old URL
+    # (404/redirect/wrong page) and the new URL (200 + extractable name).
+    #   eucom    https://www.eucom.mil/about-us/leadership/combatant-commander
+    #         -> https://www.eucom.mil/about-the-command/leadership/commander           (replaced 2026-04-28: old path 404)
+    #   southcom https://www.southcom.mil/Leadership/Commander/
+    #         -> https://www.southcom.mil/About/Leadership/Commander/                   (replaced 2026-04-28: old path 404; canonical lives under /About/)
+    #   stratcom https://www.stratcom.mil/Leadership/Commander/
+    #         -> https://www.stratcom.mil/About/Leadership/Commander/                   (replaced 2026-04-28: old path 404; canonical lives under /About/)
+    #   socom    https://www.socom.mil/about/leadership
+    #         -> https://www.socom.mil/Leadership                                       (replaced 2026-04-28: old path served a generic landing page with no commander bio)
     pages = [
         ("centcom", "https://www.centcom.mil/ABOUT-US/LEADERSHIP/"),
-        ("eucom", "https://www.eucom.mil/about-us/leadership/combatant-commander"),
+        ("eucom", "https://www.eucom.mil/about-the-command/leadership/commander"),
         ("indopacom", "https://www.pacom.mil/Leadership/Commander/"),
         ("northcom", "https://www.northcom.mil/Leadership/Commander/"),
         ("africom", "https://www.africom.mil/about-the-command/leadership/commander"),
-        ("southcom", "https://www.southcom.mil/Leadership/Commander/"),
-        ("stratcom", "https://www.stratcom.mil/Leadership/Commander/"),
-        ("socom", "https://www.socom.mil/about/leadership"),
+        ("southcom", "https://www.southcom.mil/About/Leadership/Commander/"),
+        ("stratcom", "https://www.stratcom.mil/About/Leadership/Commander/"),
+        ("socom", "https://www.socom.mil/Leadership"),
     ]
-    
+
+    # Match: TITLE + first name + (optional middle initial/name) + last name. Single line only — [ \t] not \s.
+    name_re = re.compile(
+        r'\b((?:General|Admiral|Gen\.|Adm\.|GEN|ADM)'
+        r'[ \t]+[A-Z][A-Za-z\.\-\']{1,30}'
+        r'(?:[ \t]+[A-Z][A-Za-z\.\-\']{0,30}){1,3})\b'
+    )
+
     commanders = {}
     for cocom, url in pages:
         try:
-            body = BeautifulSoup(fetch(url), "lxml").get_text()
-            # Look for general/admiral name patterns
-            for p in [r'((?:Gen(?:eral)?|Adm(?:iral)?|GEN|ADM)\.?\s+[\w\.\s\-\']+?)(?:\n|,|Commander)',
-                      r'((?:Gen|Adm)\.?\s+[\w\.\s]+?)(?:\s+is\s+the|\s+assumed|\s+serves)',
-                      r'Commander[,:\s]+((?:Gen|Adm)\.?\s+[\w\.\s]+?)(?:\n|,|\.)']:
-                m = re.search(p, body)
-                if m:
-                    name = m.group(1).strip()[:60]
-                    commanders[cocom] = {"name": name, "url": url}
-                    break
-            if cocom not in commanders:
-                commanders[cocom] = {"name": "check manually", "url": url}
+            html = fetch(url)
         except Exception as e:
-            commanders[cocom] = {"name": f"error: {e}", "url": url}
-    
+            # Rung 3: drop the source.
+            commanders[cocom] = {"name": None, "url": url, "notes": f"fetch failed: {str(e)[:140]}"}
+            print(f"  ✗ {cocom}: rung 3 (fetch failed)")
+            continue
+
+        try:
+            text = BeautifulSoup(html, "lxml").get_text(separator="\n")
+        except Exception as e:
+            commanders[cocom] = {"name": None, "url": url, "notes": f"parse failed: {str(e)[:140]}"}
+            print(f"  ✗ {cocom}: rung 3 (parse failed)")
+            continue
+
+        name = None
+        for m in name_re.finditer(text):
+            candidate = m.group(1).strip()
+            if _validate_commander_name(candidate):
+                name = candidate
+                break
+
+        if name:
+            commanders[cocom] = {"name": name, "url": url}
+            print(f"  ✓ {cocom}: {name}")
+        else:
+            commanders[cocom] = {"name": None, "url": url, "notes": "no valid name pattern matched"}
+            print(f"  ✗ {cocom}: rung 3 (no name pattern matched)")
+
+    found = sum(1 for c in commanders.values() if c.get("name"))
+    dropped = len(pages) - found
+    if dropped >= 2:
+        print(f"  ⚠  {dropped}/{len(pages)} sources on rung 3 — possible broader issue")
+
     result = {"updated": NOW, "commanders": commanders}
     save("commanders.json", result)
-    print(f"  ✓ {len([c for c in commanders.values() if 'error' not in c['name']])} commanders found")
+    print(f"  ✓ {found}/{len(pages)} commanders found")
 
 
 # ══════════════════════════════════════════════════════════════

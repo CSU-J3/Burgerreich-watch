@@ -1,1 +1,4 @@
 CLAUDE_HANDOFF.md
+probe_*.py
+*_prompt.txt
+__pycache__/
