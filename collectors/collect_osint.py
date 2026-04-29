@@ -38,6 +38,7 @@ except (AttributeError, OSError):
 
 try:
     import requests
+    import feedparser
     from bs4 import BeautifulSoup
 except ImportError:
     print("[COLLECTOR] pip install -r collectors/requirements.txt")
@@ -57,7 +58,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
     "Upgrade-Insecure-Requests": "1",
     "Sec-Fetch-Dest": "document",
@@ -108,25 +109,40 @@ def save(filename, data):
 # ══════════════════════════════════════════════════════════════
 # 1. FLEET POSITIONS — USNI Fleet Tracker
 # ══════════════════════════════════════════════════════════════
+def _empty_fleet(source_url, notes):
+    """Rung-3 placeholder: keeps fleet.json present so the dashboard's overlay merge succeeds."""
+    return {"updated": NOW, "source_url": source_url, "battle_force": None,
+            "deployed": None, "underway": None, "carriers": [], "args": [], "notes": notes}
+
+
 def collect_fleet():
     print("\n[1/6] FLEET POSITIONS — USNI Fleet Tracker")
-    
-    # Find latest tracker post
-    index = fetch("https://news.usni.org/category/fleet-tracker")
-    soup = BeautifulSoup(index, "lxml")
-    
-    link = None
-    for a in soup.find_all("a", href=True):
-        if "fleet-and-marine-tracker" in a["href"]:
-            link = a["href"]
-            break
-    
-    if not link:
-        print("  ✗ Could not find latest tracker URL")
+
+    # Discover the latest tracker post via RSS. The HTML category page returns
+    # markup the previous scrape couldn't navigate; the per-category feed is
+    # permissive and structurally stable.
+    rss_url = "https://news.usni.org/category/fleet-tracker/feed"
+    try:
+        feed = feedparser.parse(fetch(rss_url))
+    except Exception as e:
+        save("fleet.json", _empty_fleet(rss_url, f"rss fetch failed: {str(e)[:140]}"))
+        print(f"  ✗ rung 3 (RSS fetch failed: {str(e)[:80]})")
         return
-    
-    print(f"  Fetching: {link}")
-    body = BeautifulSoup(fetch(link), "lxml").get_text(separator="\n")
+
+    if not feed.entries:
+        save("fleet.json", _empty_fleet(rss_url, "rss feed had no entries"))
+        print("  ✗ rung 3 (RSS feed empty)")
+        return
+
+    link = feed.entries[0].link
+    print(f"  Latest tracker: {link}")
+
+    try:
+        body = BeautifulSoup(fetch(link), "lxml").get_text(separator="\n")
+    except Exception as e:
+        save("fleet.json", _empty_fleet(link, f"article fetch failed: {str(e)[:140]}"))
+        print(f"  ✗ rung 3 (article fetch failed: {str(e)[:80]})")
+        return
     
     carriers = []
     # Pattern: "USS [Name] (CVN-XX) is [in/operating/underway] [location]"

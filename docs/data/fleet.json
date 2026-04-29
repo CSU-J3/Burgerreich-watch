@@ -1,0 +1,41 @@
+{
+  "updated": "2026-04-29T20:06:26.208771+00:00",
+  "source_url": "https://news.usni.org/2026/04/06/usni-news-fleet-and-marine-tracker-april-6-2026",
+  "battle_force": null,
+  "deployed": "17",
+  "underway": null,
+  "carriers": [
+    {
+      "name": "USS\u00a0\nGeorge Washington",
+      "hull": "CVN-73",
+      "location": "port in Yokosuka",
+      "status": "DEPLOYED"
+    },
+    {
+      "name": "USS\u00a0\nGerald R. Ford",
+      "hull": "CVN-78",
+      "location": "Eastern Mediterranean following a port visit to Split",
+      "status": "HOMEPORT"
+    },
+    {
+      "name": "USS\u00a0\nTheodore Roosevelt",
+      "hull": "CVN-71",
+      "location": "to San Diego",
+      "status": "DEPLOYED"
+    }
+  ],
+  "args": [
+    {
+      "name": "USS\u00a0\nBoxer",
+      "hull": "LHD-4",
+      "location": "from Pearl Harbor",
+      "status": "HOMEPORT"
+    },
+    {
+      "name": "USS\u00a0\nTripoli",
+      "hull": "LHA-7",
+      "location": "operating in the CENTCOM area of responsibility",
+      "status": "DEPLOYED"
+    }
+  ]
+}
