@@ -1,21 +1,16 @@
 {
-  "updated": "2026-04-03T22:42:27.346996+00:00",
+  "updated": "2026-04-29T02:06:48.903072+00:00",
   "source_url": "https://www.atlanticcouncil.org/commentary/trackers-and-data-visualizations/tracking-us-military-assets-in-the-iran-war/",
   "items": [
     {
       "type": "MQ-9 Reaper",
-      "qty": 12,
+      "qty": 1,
       "status": "DESTROYED"
     },
     {
       "type": "AN/TPY-2 THAAD Radar",
       "qty": 48,
       "status": "HIT"
-    },
-    {
-      "type": "USS Ford (CVN-78)",
-      "qty": 1,
-      "status": "DAMAGED"
     }
   ],
   "total_cost": "unknown"

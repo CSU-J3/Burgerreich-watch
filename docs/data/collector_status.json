@@ -1,7 +1,7 @@
 {
-  "last_run": "2026-04-03T22:42:27.346996+00:00",
+  "last_run": "2026-04-29T02:06:48.903072+00:00",
   "errors": [
-    "Fleet: 403 Client Error: Forbidden for url: https://news.usni.org/category/fleet-tracker"
+    "Fleet: 403 Client Error: Forbidden for url: https://news.usni.org/2026/04/27/usni-news-fleet-and-marine-tracker-april-27-2026"
   ],
   "collectors": [
     "Fleet",
