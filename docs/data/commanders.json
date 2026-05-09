@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-09T02:04:41.833555+00:00",
+  "updated": "2026-05-09T07:44:46.062739+00:00",
   "commanders": {
     "centcom": {
       "name": null,
@@ -35,8 +35,9 @@
       "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.stratcom.mil/About/Leadership/Commander/"
     },
     "socom": {
-      "name": "Gen. Claude K. Tudor Jr",
-      "url": "https://www.socom.mil/Leadership"
+      "name": null,
+      "url": "https://www.socom.mil/Leadership",
+      "notes": "no valid name pattern matched"
     }
   }
 }
