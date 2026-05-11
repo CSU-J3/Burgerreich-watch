@@ -1,10 +1,10 @@
 {
-  "updated": "2026-05-11T16:15:29.406338+00:00",
-  "source_url": "https://news.usni.org/2026/04/13/usni-news-fleet-and-marine-tracker-april-13-2026",
+  "updated": "2026-05-11T19:28:38.734225+00:00",
+  "source_url": "https://news.usni.org/2026/04/20/usni-news-fleet-and-marine-tracker-april-20-2026",
   "battle_force": null,
   "deployed": null,
   "underway": null,
   "carriers": [],
   "args": [],
-  "notes": "article fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://news.usni.org/2026/04/13/usni-news-fleet-and-marine-track"
+  "notes": "article fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://news.usni.org/2026/04/20/usni-news-fleet-and-marine-track"
 }
