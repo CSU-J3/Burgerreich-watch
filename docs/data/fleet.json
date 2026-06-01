@@ -1,27 +1,33 @@
 {
-  "updated": "2026-06-01T11:11:25.836041+00:00",
-  "source_url": "https://news.usni.org/2026/05/11/usni-news-fleet-and-marine-tracker-may-11-2026",
+  "updated": "2026-06-01T17:20:25.490484+00:00",
+  "source_url": "https://news.usni.org/2026/05/18/usni-news-fleet-and-marine-tracker-may-18-2026",
   "battle_force": "291",
-  "deployed": "105",
+  "deployed": "101",
   "underway": null,
   "carriers": [
     {
       "name": "USS George Washington",
       "hull": "CVN-73",
-      "location": "Philippine Sea",
-      "status": "DEPLOYED"
+      "location": "Yokosuka",
+      "status": "HOMEPORT"
     },
     {
       "name": "USS Theodore Roosevelt",
       "hull": "CVN-71",
-      "location": "Eastern Pacific",
-      "status": "DEPLOYED"
+      "location": "San Diego",
+      "status": "HOMEPORT"
     },
     {
       "name": "USS Dwight D. Eisenhower",
       "hull": "CVN-69",
       "location": "Norfolk",
-      "status": "DEPLOYED"
+      "status": "HOMEPORT"
+    },
+    {
+      "name": "USS Gerald R. Ford",
+      "hull": "CVN-78",
+      "location": "Norfolk after completing an 11-month deployment",
+      "status": "HOMEPORT"
     }
   ],
   "args": [
@@ -34,25 +40,13 @@
     {
       "name": "USS Boxer",
       "hull": "LHD-4",
-      "location": "Indian Ocean",
+      "location": "Strait of Malacca",
       "status": "DEPLOYED"
     },
     {
       "name": "USS Makin Island",
       "hull": "LHD-8",
-      "location": "San Diego",
-      "status": "DEPLOYED"
-    },
-    {
-      "name": "USS Essex",
-      "hull": "LHD-2",
-      "location": "and returned Tuesday to San Diego",
-      "status": "DEPLOYED"
-    },
-    {
-      "name": "USS Kearsarge",
-      "hull": "LHD-3",
-      "location": "Norfolk",
+      "location": "Eastern Pacific",
       "status": "DEPLOYED"
     }
   ]
