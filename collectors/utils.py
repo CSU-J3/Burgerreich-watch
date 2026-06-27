@@ -68,18 +68,61 @@ def save_data(filename: str, items: list):
     print(f"[OK] {filename}: {len(merged)} items saved")
 
 
+# Rung 1: realistic browser headers. Mirrors Chrome 132 on macOS.
+# Same header set as collect_osint.py — .mil RSS endpoints (centcom, eucom,
+# pacom, africom, stratcom) sit on the same DoD CDN that TLS-fingerprints the
+# leadership pages, so the same ladder applies.
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+}
+
+try:
+    from curl_cffi import requests as _cffi_requests
+    _HAVE_CURL_CFFI = True
+except ImportError:
+    _HAVE_CURL_CFFI = False
+
+
+def _fetch_text(url: str, timeout: int = 30) -> str:
+    """Rung 1 (requests + browser headers) → Rung 2 (curl_cffi chrome131).
+    Raises RuntimeError if both rungs fail."""
+    import requests
+
+    rung1_err = None
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=timeout)
+        resp.raise_for_status()
+        return resp.text
+    except requests.RequestException as e:
+        rung1_err = e
+        print(f"  ↻ Rung 1 failed ({type(e).__name__}: {str(e)[:80]}); escalating to curl_cffi")
+
+    if not _HAVE_CURL_CFFI:
+        raise RuntimeError(f"curl_cffi unavailable; rung 1 failed: {rung1_err}")
+
+    try:
+        resp = _cffi_requests.get(url, headers=HEADERS, timeout=timeout, impersonate="chrome131")
+        resp.raise_for_status()
+        return resp.text
+    except Exception as rung2_err:
+        raise RuntimeError(f"Rung 1+2 both failed: rung1={rung1_err}; rung2={rung2_err}")
+
+
 def fetch_rss(url: str, timeout: int = 30) -> list:
     """Fetch and parse an RSS feed, return list of entries."""
     import feedparser
-    import requests
-
     try:
-        resp = requests.get(url, timeout=timeout, headers={
-            "User-Agent": "BurgerreichWatch/0.1 (OSINT collector; +https://dasdemarc.substack.com)"
-        })
-        resp.raise_for_status()
-        feed = feedparser.parse(resp.text)
-        return feed.entries
+        body = _fetch_text(url, timeout=timeout)
+        return feedparser.parse(body).entries
     except Exception as e:
         print(f"[ERR] RSS fetch failed for {url}: {e}")
         return []
@@ -87,14 +130,8 @@ def fetch_rss(url: str, timeout: int = 30) -> list:
 
 def fetch_page(url: str, timeout: int = 30) -> str:
     """Fetch a web page, return HTML text."""
-    import requests
-
     try:
-        resp = requests.get(url, timeout=timeout, headers={
-            "User-Agent": "BurgerreichWatch/0.1 (OSINT collector; +https://dasdemarc.substack.com)"
-        })
-        resp.raise_for_status()
-        return resp.text
+        return _fetch_text(url, timeout=timeout)
     except Exception as e:
         print(f"[ERR] Page fetch failed for {url}: {e}")
         return ""
