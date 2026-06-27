@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T08:26:50.724759+00:00",
+  "updated": "2026-06-27T13:13:36.035580+00:00",
   "commanders": {
     "centcom": {
       "name": null,
@@ -7,9 +7,8 @@
       "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.centcom.mil/ABOUT-US/LEADERSHIP/"
     },
     "eucom": {
-      "name": null,
-      "url": "https://www.eucom.mil/about-the-command/leadership/commander",
-      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.eucom.mil/about-the-command/leadership/commander"
+      "name": "Gen. Alexus G. Grynkewich",
+      "url": "https://www.eucom.mil/about-the-command/leadership/commander"
     },
     "indopacom": {
       "name": null,
@@ -22,9 +21,8 @@
       "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.northcom.mil/Leadership/Commander/"
     },
     "africom": {
-      "name": null,
-      "url": "https://www.africom.mil/about-the-command/leadership/commander",
-      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.africom.mil/about-the-command/leadership/commander"
+      "name": "Gen. Dagvin R.M. Anderson",
+      "url": "https://www.africom.mil/about-the-command/leadership/commander"
     },
     "southcom": {
       "name": null,
