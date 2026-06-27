@@ -1,0 +1,12 @@
+# Burgerreich-watch runtime dependencies.
+#
+# watchcore is the shared engine (Observation contract + store/dedup/query
+# stages). This git+https line is for CI. For LOCAL development install the
+# sibling checkout editable instead, so watchcore edits are importable without
+# pushing:
+#
+#     pip install -e "../watchcore[dedup]"
+#
+# Collector runtime deps (curl_cffi, feedparser) are added in Phase 1-2 when
+# the dvids/news collectors land.
+watchcore[dedup] @ git+https://github.com/CSU-J3/watchcore

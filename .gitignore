@@ -2,6 +2,8 @@ CLAUDE_HANDOFF.md
 probe_*.py
 *_prompt.txt
 __pycache__/
+*.pyc
+.venv/
 
 # Claude Code artifacts
 .claude/
