@@ -1,22 +1,41 @@
 """Ingest: run the collectors, store and dedup their Observations.
 
-One of the two files in this repo that touch the store (serve.py is the other).
-It calls watchcore's store and dedup stages over the collector output:
+Pure orchestration. The store (Parquet upsert on obs_id) and the two-stage dedup
+live in watchcore; this only wires Burgerreich's collectors into those shared
+stages:
 
-  collectors -> watchcore.store.upsert (exact dedup on obs_id, stamps
-  schema_version / first_seen / last_seen / content_hash) -> watchcore.dedup
-  (MinHash near-dup, assigns cluster_id).
+  collectors -> watchcore.store.ParquetStore.ingest (exact dedup on obs_id;
+  stamps schema_version / first_seen / last_seen / content_hash)
+  -> watchcore.dedup.assign_clusters (stage-one content_hash + stage-two MinHash
+  near-dup, assigns cluster_id).
 
-The store, dedup, and query logic itself lives in watchcore, not here. This
-module only wires Burgerreich's collectors into those shared stages.
-
-Placeholder until Phase 3 (watchcore store + dedup) and the collectors
-(Phases 1-2) exist.
+No store/dedup/query logic lives here.
 """
+from __future__ import annotations
+
+from pathlib import Path
+
+from watchcore.dedup import assign_clusters
+from watchcore.store import ParquetStore
+
+from collectors import dvids, news
+
+# Committed Parquet store. Lives outside docs/ (which GitHub Pages serves); the
+# Phase 4 serve stage reads it to produce docs/data/*.json.
+STORE_ROOT = Path(__file__).parent / "store"
 
 
 def main() -> None:
-    raise NotImplementedError("ingest wiring lands in Phase 3")
+    observations = dvids.collect() + news.collect()
+    store = ParquetStore(STORE_ROOT)
+    ing = store.ingest(observations)
+    ded = assign_clusters(store)
+    print(
+        f"[ingest] {ing['rows_in']} collected, {ing['unique_obs_ids']} unique, "
+        f"{len(ing['partitions_written'])} partitions written | "
+        f"dedup: {ded['clusters']} clusters over {ded['rows']} rows "
+        f"(threshold {ded['threshold']})"
+    )
 
 
 if __name__ == "__main__":

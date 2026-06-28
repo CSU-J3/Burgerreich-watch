@@ -7,7 +7,7 @@
 #
 #     pip install -e "../watchcore[dedup]"
 #
-watchcore[dedup] @ git+https://github.com/CSU-J3/watchcore
+watchcore[dedup,store] @ git+https://github.com/CSU-J3/watchcore
 
 # Collector runtime deps.
 curl_cffi>=0.7.0
