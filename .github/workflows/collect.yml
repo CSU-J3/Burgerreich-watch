@@ -1,29 +1,49 @@
+# Full watch chain on a 6-hour cron: collect -> ingest -> dedup -> serve ->
+# commit. The committed Parquet store + docs/data/feed.json are what the static
+# dashboard (served from docs/ by deploy.yml) reads. watchcore is installed from
+# git+https (see requirements.txt), NOT the local editable checkout — that path
+# only exists in local dev.
 name: OSINT Collect + Deploy
 
 on:
   schedule:
-    - cron: '0 0,6,12,18 * * *'
-    - cron: '0 22 * * 5'
-    - cron: '30 13 * * 1'
+    - cron: '0 0,6,12,18 * * *'   # every 6 hours
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write                 # same-repo push via GITHUB_TOKEN, no PAT
+
+concurrency:
+  group: collect                  # never let two collect runs race on the push
+  cancel-in-progress: false
 
 jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4   # default GITHUB_TOKEN creds -> push works
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests beautifulsoup4 lxml feedparser
-      - run: python collectors/collect_osint.py
-        continue-on-error: true
-      - run: |
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt   # watchcore[dedup,store] from git+https + collectors
+
+      - name: Collect, store, dedup
+        run: python ingest.py
+
+      - name: Serve (write docs/data/feed.json from the store)
+        run: python serve.py
+
+      - name: Commit updated store + feed
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/ || true
-          git diff --cached --quiet || git commit -m "📡 OSINT $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          git add store/ docs/data/feed.json          # scoped paths only, not the whole tree
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📡 watch $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
