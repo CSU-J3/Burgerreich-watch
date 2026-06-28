@@ -1,41 +1,10 @@
 {
-  "updated": "2026-04-29T21:32:00.890531+00:00",
-  "source_url": "https://news.usni.org/2026/04/06/usni-news-fleet-and-marine-tracker-april-6-2026",
-  "battle_force": "291",
-  "deployed": "108",
+  "updated": "2026-06-28T19:03:53.361415+00:00",
+  "source_url": "https://news.usni.org/2026/06/01/usni-news-fleet-and-marine-tracker-june-1-2026",
+  "battle_force": null,
+  "deployed": null,
   "underway": null,
-  "carriers": [
-    {
-      "name": "USS George Washington",
-      "hull": "CVN-73",
-      "location": "port in Yokosuka",
-      "status": "HOMEPORT"
-    },
-    {
-      "name": "USS Gerald R. Ford",
-      "hull": "CVN-78",
-      "location": "Eastern Mediterranean following a port visit to Split",
-      "status": "DEPLOYED"
-    },
-    {
-      "name": "USS Theodore Roosevelt",
-      "hull": "CVN-71",
-      "location": "San Diego",
-      "status": "HOMEPORT"
-    }
-  ],
-  "args": [
-    {
-      "name": "USS Boxer",
-      "hull": "LHD-4",
-      "location": "Pearl Harbor",
-      "status": "DEPLOYED"
-    },
-    {
-      "name": "USS Tripoli",
-      "hull": "LHA-7",
-      "location": "operating in the CENTCOM area of responsibility",
-      "status": "DEPLOYED"
-    }
-  ]
+  "carriers": [],
+  "args": [],
+  "notes": "article fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://news.usni.org/2026/06/01/usni-news-fleet-and-marine-track"
 }

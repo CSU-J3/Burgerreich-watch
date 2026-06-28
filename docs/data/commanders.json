@@ -1,9 +1,10 @@
 {
-  "updated": "2026-04-29T21:32:00.890531+00:00",
+  "updated": "2026-06-28T19:03:53.361415+00:00",
   "commanders": {
     "centcom": {
-      "name": "Admiral Brad Cooper",
-      "url": "https://www.centcom.mil/ABOUT-US/LEADERSHIP/"
+      "name": null,
+      "url": "https://www.centcom.mil/ABOUT-US/LEADERSHIP/",
+      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.centcom.mil/ABOUT-US/LEADERSHIP/"
     },
     "eucom": {
       "name": "Gen. Alexus G. Grynkewich",
@@ -12,23 +13,26 @@
     "indopacom": {
       "name": null,
       "url": "https://www.pacom.mil/Leadership/Commander/",
-      "notes": "fetch failed: Rung 1+2 both failed: rung1=403 Client Error: Forbidden for url: https://www.pacom.mil/Leadership/Commander/; rung2=Failed to perform, curl:"
+      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.pacom.mil/Leadership/Commander/"
     },
     "northcom": {
-      "name": "General Gregory M. Guillot",
-      "url": "https://www.northcom.mil/Leadership/Commander/"
+      "name": null,
+      "url": "https://www.northcom.mil/Leadership/Commander/",
+      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.northcom.mil/Leadership/Commander/"
     },
     "africom": {
       "name": "Gen. Dagvin R.M. Anderson",
       "url": "https://www.africom.mil/about-the-command/leadership/commander"
     },
     "southcom": {
-      "name": "Gen. Francis L. Donovan",
-      "url": "https://www.southcom.mil/About/Leadership/Commander/"
+      "name": null,
+      "url": "https://www.southcom.mil/About/Leadership/Commander/",
+      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.southcom.mil/About/Leadership/Commander/"
     },
     "stratcom": {
-      "name": "Admiral Richard Correll",
-      "url": "https://www.stratcom.mil/About/Leadership/Commander/"
+      "name": null,
+      "url": "https://www.stratcom.mil/About/Leadership/Commander/",
+      "notes": "fetch failed: curl_cffi unavailable; rung 1 failed: 403 Client Error: Forbidden for url: https://www.stratcom.mil/About/Leadership/Commander/"
     },
     "socom": {
       "name": "Gen. Claude K. Tudor Jr",
