@@ -355,6 +355,10 @@
   .feed-tag-exercise { background:var(--magenta); color:#000; }
   .feed-tag-alert { background:var(--red); color:#000; }
   .feed-tag-unconfirmed { background:none; color:#ffcc00; border:1px dashed #ffcc00; }
+  .feed-tag-other { background:#555; color:#ddd; }
+  .feed-grade { display:inline-block; font-size:10px; padding:1px 5px; margin-left:8px; border:1px solid var(--accent); color:var(--accent); border-radius:2px; font-weight:bold; letter-spacing:0.5px; vertical-align:middle; }
+  .retired-note { color:var(--text-dim); font-size:12px; padding:10px 12px; border:1px dashed #444; border-radius:4px; background:rgba(255,255,255,0.02); line-height:1.5; }
+  .retired-note b { color:#888; letter-spacing:1px; }
 
   .posture-row { display:flex; justify-content:space-between; padding:8px 6px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:15px; border-radius:2px; transition:background 0.15s; }
   .posture-row:hover { background:rgba(255,140,0,0.08); }
@@ -398,51 +402,13 @@
     <div class="topbar-brand">BURGERREICH_watch@<span> das_DEMARC:\\<a href="https://dasdemarc.substack.com" target="_blank" class="brand-link">SUBSTACK</a>\\<a href="https://github.com/mehidk69" target="_blank" class="brand-link">GITHUB</a>\\<a href="https://comradecorium.github.io/specterwatch" target="_blank" class="brand-link">SPECTERWATCH</a>\\<a href="https://wannndows69.github.io/Follow-the-Money-/" target="_blank" class="brand-link brand-link-bop">BoP</a>&gt;<span class="cursor">_</span></span></div>
   </div>
   <div class="topbar-center">
+    <!-- Casualty tracker retired (Phase 4): no live collector emits casualty
+         tallies as Observations, so the old seed numbers are not shown as
+         current. A future casualty collector would restore this. -->
     <div class="topbar-casualties">
       <div class="cas-group">
-        <span class="cas-op">EPIC FURY</span>
-        <span class="cas-item"><span class="cas-kia">13</span><span class="cas-label">KIA</span></span>
-        <span class="cas-item"><span class="cas-wia">348</span><span class="cas-label">WIA</span></span>
-        <div class="cas-tooltip">
-          <div class="cas-tooltip-title">OPERATION EPIC FURY — IRAN</div>
-          <div class="cas-tooltip-row"><span class="cas-kia">13</span> killed (CENTCOM) · <span class="cas-wia">348</span> wounded (CENTCOM 3/31)</div>
-          <div class="cas-tooltip-detail">Updated from 303+ to 348 WIA per CENTCOM spokesperson Mar 31. 315 (91%) returned to duty. 6 remain seriously wounded. KC-135 lost over Iraq Mar 12 (6 KIA).</div>
-          <div class="cas-tooltip-src">SRC: CENTCOM (Capt. Tim Hawkins) · DefenseScoop Mar 31</div>
-        </div>
-      </div>
-      <span style="color:#333;">│</span>
-      <div class="cas-group">
-        <span class="cas-op">TOWER 22</span>
-        <span class="cas-item"><span class="cas-kia">3</span><span class="cas-label">KIA</span></span>
-        <div class="cas-tooltip">
-          <div class="cas-tooltip-title">TOWER 22 — JORDAN</div>
-          <div class="cas-tooltip-row"><span class="cas-kia">3</span> killed in action · <span class="cas-wia">47</span> wounded</div>
-          <div class="cas-tooltip-detail">Iranian-backed militia one-way UAS struck container housing units at Tower 22 logistics base near the Jordan-Syria border. Sgt. William Rivers, Spc. Kennedy Sanders, Spc. Breonna Moffett killed.</div>
-          <div class="cas-tooltip-src">SRC: DoD / CENTCOM · Jan 28, 2024</div>
-        </div>
-      </div>
-      <span style="color:#333;">│</span>
-      <div class="cas-group">
-        <span class="cas-op">SYRIA</span>
-        <span class="cas-item"><span class="cas-kia">3</span><span class="cas-label">KIA</span></span>
-        <div class="cas-tooltip">
-          <div class="cas-tooltip-title">SYRIA — ISIS AMBUSH</div>
-          <div class="cas-tooltip-row"><span class="cas-kia">3</span> killed in action · <span class="cas-wia">3</span> wounded</div>
-          <div class="cas-tooltip-detail">IS gunman ambushed US patrol in eastern Syria. 2 US soldiers and 1 civilian interpreter killed. Gunman engaged and killed. 3 additional service members wounded.</div>
-          <div class="cas-tooltip-src">SRC: CENTCOM / BBC · Dec 14, 2025</div>
-        </div>
-      </div>
-      <span style="color:#333;">│</span>
-      <div class="cas-group" style="border-left:1px dashed rgba(255,204,0,0.3);padding-left:12px;">
-        <span class="cas-op" style="color:#ffcc00;">⚠ UNCONFIRMED</span>
-        <span class="cas-item"><span class="cas-kia" style="color:#ffcc00;">+2</span><span class="cas-label">KIA</span></span>
-        <span class="cas-item"><span class="cas-wia" style="color:#ffcc00;">520+</span><span class="cas-label">WIA</span></span>
-        <div class="cas-tooltip" style="border-color:#ffcc00;">
-          <div class="cas-tooltip-title" style="color:#ffcc00;">⚠ PENTAGON UNDERCOUNT — The Intercept</div>
-          <div class="cas-tooltip-row" style="color:#ffcc00;">At least 15 KIA (not 13) · 520+ total injured (not 348)</div>
-          <div class="cas-tooltip-detail">The Intercept reports at least 15 US troops killed including a soldier at Prince Sultan AB on Mar 1 not in official count. 520+ includes smoke inhalation injuries on USS Ford. CENTCOM sending outdated 3-day-old casualty statements to media. Prince Sultan AB Mar 27 strike injuries excluded from official count.</div>
-          <div class="cas-tooltip-src">SRC: The Intercept Apr 1 · AP · DefenseScoop</div>
-        </div>
+        <span class="cas-op">CASUALTY TRACKER</span>
+        <span class="cas-label" style="color:var(--text-dim);letter-spacing:0.5px;">RETIRED · no live collector</span>
       </div>
     </div>
   </div>
@@ -466,9 +432,9 @@
   <button class="map-ctrl-btn active" onclick="toggleLayer('carriers',this)">CSG</button>
   <button class="map-ctrl-btn active" onclick="toggleLayer('args',this)">ARG</button>
   <button class="map-ctrl-btn active" onclick="toggleLayer('bases',this)">BASES</button>
-  <button class="map-ctrl-btn active" onclick="toggleLayer('posture',this)">POSTURE</button>
+  <!-- POSTURE and LOSSES map layers retired (Phase 4): both plotted dropped-view
+       seed; their toggles and markers are removed rather than shown as live. -->
   <button class="map-ctrl-btn active" onclick="toggleLayer('tracks',this)">TRACKS</button>
-  <button class="map-ctrl-btn active" onclick="toggleLayer('losses',this)" style="color:#ff6633;border-color:rgba(255,102,51,0.3);">LOSSES</button>
   <button class="map-ctrl-btn active" onclick="toggleLayer('aircraft',this)">AIR</button>
 </div>
 
@@ -554,14 +520,17 @@
   <div class="threat-level" style="color:#ff3333;">CRITICAL</div>
   <div class="threat-bar"><div class="threat-fill" style="width:89%;"></div></div>
   <div class="threat-labels"><span>LOW</span><span>GUARDED</span><span>ELEVATED</span><span>HIGH</span><span>CRITICAL</span></div>
+  <!-- Doomsday Clock retired (Phase 4): the value was a scrape with no
+       Observation equivalent in the store, so the frozen seed figure is no
+       longer shown as current. -->
   <div class="midnight-row">
     <div>
       <div class="midnight-label">Doomsday Clock</div>
       <div class="midnight-sub">Bulletin of the Atomic Scientists</div>
     </div>
     <div style="text-align:right;">
-      <div class="midnight-time">89s</div>
-      <div class="midnight-sub">to midnight</div>
+      <div class="midnight-time" style="color:var(--text-dim);font-size:13px;">RETIRED</div>
+      <div class="midnight-sub">no live collector</div>
     </div>
   </div>
 </div>
@@ -1239,15 +1208,13 @@ function renderContractors() {
 }
 
 function renderPosture() {
-  const body = document.getElementById('posture-body');
-  body.innerHTML = FORCE_POSTURE.map((p, i) => {
-    let deltaClass = p.delta === 'up' ? 'posture-delta-up' : p.delta === 'down' ? 'posture-delta-down' : 'posture-delta-flat';
-    let deltaSymbol = p.delta === 'up' ? '▲' : p.delta === 'down' ? '▼' : '—';
-    return `<div class="posture-row" style="cursor:pointer;" onclick="flyToPosture(${i})" title="Click to locate on map">
-      <span class="posture-region">${p.region} <span style="color:var(--text-dim);font-size:10px;">${p.note}</span></span>
-      <span><span class="posture-count">${p.count}</span> <span class="${deltaClass}">${deltaSymbol}</span></span>
-    </div>`;
-  }).join('');
+  // Troop-presence headcounts retired (Phase 4): no live collector emits a
+  // theater troop total as an Observation, so the seed counts are not shown as
+  // current. Posture *changes* below are narrative items, kept as-is.
+  document.getElementById('posture-body').innerHTML =
+    '<div class="retired-note"><b>TROOP PRESENCE · RETIRED</b><br>' +
+    'No live troop-count collector. Seed headcounts were removed rather than ' +
+    'shown as current. A future force-posture collector would restore this.</div>';
 
   const changes = document.getElementById('posture-changes');
   changes.innerHTML = POSTURE_CHANGES.map(c => {
@@ -1272,7 +1239,7 @@ function renderCOCOM(cocom) {
     .filter(f => f.cocom === cocom)
     .map(f => `
       <div class="feed-item">
-        <div class="feed-time">${f.time} <span class="feed-source">${f.source}</span></div>
+        <div class="feed-time">${f.time} <span class="feed-source">${f.source}</span>${f.grade ? `<span class="feed-grade" title="Admiralty reliability/credibility grade">${f.grade}</span>` : ''}</div>
         <div class="feed-headline"><span class="feed-tag feed-tag-${f.tag}">${f.tag.toUpperCase()}</span> ${f.headline}</div>
       </div>`).join('');
 
@@ -1311,46 +1278,14 @@ function renderAircraft() {
 }
 
 function renderLosses() {
-  const body = document.getElementById('losses-body');
-  let lossId = 0;
-  
-  let html = '';
-  
-  EQUIPMENT_LOSSES.forEach(cat => {
-    if (cat.unconfirmed) {
-      html += `<div style="margin-top:16px;padding:12px;border:1px dashed #ffcc00;border-radius:4px;background:rgba(255,204,0,0.03);">`;
-      html += `<div class="section-label" style="color:#ffcc00;border-bottom-color:rgba(255,204,0,0.2);">${cat.category}</div>`;
-    } else {
-      html += `<div class="section-label">${cat.category}</div>`;
-    }
-    cat.items.forEach(item => {
-      const qtyStr = item.qty > 0 ? `<span style="color:${cat.unconfirmed ? '#ffcc00' : 'var(--red)'};font-weight:bold;font-size:16px;">${item.qty}×</span>` : '';
-      const clickable = item.lat ? `style="cursor:pointer;" onclick="flyToLoss(${item.lat},${item.lng},'${item.type.replace(/'/g,"\\'")}')" title="Click to locate on map — ${item.loc}"` : '';
-      html += `<div class="loss-item" ${clickable}>
-        <div class="loss-header">
-          ${qtyStr}
-          <span style="color:${cat.unconfirmed ? '#ffcc00' : '#fbc387'};font-weight:bold;font-size:14px;">${item.type}</span>
-          ${item.loc ? `<span style="color:#ff6633;font-size:10px;margin-left:auto;">📍 ${item.loc}</span>` : ''}
-        </div>
-        <div style="color:var(--text);font-size:12px;margin-top:4px;">
-          <span style="color:${cat.unconfirmed ? '#ffcc00' : 'var(--red)'};font-size:11px;">${cat.unconfirmed ? 'REPORTED:' : 'CAUSE:'}</span> ${item.cause}
-          <span style="color:var(--text-dim);font-size:11px;margin-left:8px;">${item.date}</span>
-        </div>
-        <div style="color:var(--text-dim);font-size:11px;margin-top:3px;">${item.note}</div>
-        ${item.cost && item.cost !== '—' ? `<div style="color:var(--accent);font-size:11px;margin-top:2px;">EST. COST: ${item.cost}</div>` : ''}
-      </div>`;
-      lossId++;
-    });
-    if (cat.unconfirmed) html += `</div>`;
-  });
-  
-  html += '<div class="section-label">ESTIMATED TOTAL COST (CONFIRMED)</div>';
-  html += '<div style="color:var(--red);font-size:20px;font-weight:bold;margin-bottom:2px;">~$3.84B+</div>';
-  html += '<div style="color:var(--text-dim);font-size:11px;margin-bottom:8px;">First 2 weeks. SRC: Anadolu / open-source</div>';
-  html += '<div style="color:#ffcc00;font-size:14px;font-weight:bold;">+ ~$300M+ unconfirmed</div>';
-  html += '<div style="color:var(--text-dim);font-size:11px;">E-3 AWACS + additional tankers. SRC: CNN, Bloomberg, WSJ, TWZ, AP</div>';
-  
-  body.innerHTML = html;
+  // Equipment-loss tallies retired (Phase 4): these were an open-source scrape
+  // with no Observation equivalent in the store. Rather than fall back to frozen
+  // seed quantities and cost totals as if current, the panel states it is
+  // retired. A future loss-tracking collector would restore it.
+  document.getElementById('losses-body').innerHTML =
+    '<div class="retired-note"><b>EQUIPMENT LOSSES · RETIRED</b><br>' +
+    'No live collector emits equipment losses as graded Observations. The old ' +
+    'seed tallies were removed rather than shown as current.</div>';
 }
 
 function flyToLoss(lat, lng, type) {
@@ -1394,28 +1329,14 @@ function renderSources() {
 }
 
 function renderTollDetails() {
+  // Casualty toll retired (Phase 4): casualty counts have no Observation
+  // equivalent in the store, so the panel no longer renders frozen seed figures
+  // as if current. A future casualty collector would restore this.
   document.getElementById('toll-details').innerHTML =
-    '<div class="section-label" style="margin-top:0;">US Personnel Casualties — Active Operations</div>' +
-    '<div style="display:flex;gap:20px;margin-bottom:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);">' +
-    '<div><span style="color:var(--red);font-size:22px;font-weight:bold;">19</span><span style="color:var(--text-dim);font-size:12px;"> KIA (confirmed)</span></div>' +
-    '<div><span style="color:#ff9933;font-size:22px;font-weight:bold;">348</span><span style="color:var(--text-dim);font-size:12px;"> WIA (CENTCOM 3/31)</span></div>' +
-    '</div>' +
-    '<div style="display:flex;gap:20px;margin-bottom:12px;padding:8px;border:1px dashed #ffcc00;border-radius:4px;background:rgba(255,204,0,0.03);">' +
-    '<div><span style="color:#ffcc00;font-size:22px;font-weight:bold;">15+</span><span style="color:#ffcc00;font-size:12px;"> KIA (unconfirmed)</span></div>' +
-    '<div><span style="color:#ffcc00;font-size:22px;font-weight:bold;">520+</span><span style="color:#ffcc00;font-size:12px;"> WIA (total est.)</span></div>' +
-    '</div>' +
-    '<div style="color:var(--text-dim);font-size:11px;margin-bottom:14px;line-height:1.4;">CENTCOM official count excludes Prince Sultan AB Mar 27 injuries and is based on 3-day-old statements. The Intercept reports at least 15 KIA and 520+ total injured including Ford smoke inhalation. "Casualty Cover-Up" — The Intercept, Apr 1, 2026.</div>' +
-    CONFLICT_TOLL_DATA.map(c => `
-    <div style="padding:10px 0;border-bottom:1px solid #151515;${c.name.includes('UNCONFIRMED') ? 'border:1px dashed #ffcc00;border-radius:4px;padding:10px;margin-top:8px;background:rgba(255,204,0,0.03);' : ''}">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;">
-        <span style="color:${c.color};font-size:12px;font-weight:bold;letter-spacing:1px;">${c.name}</span>
-        <span style="color:#e0d5c8;font-size:14px;font-weight:bold;">${c.label}</span>
-      </div>
-      <div style="color:var(--text-dim);font-size:13px;margin-top:3px;">${c.detail} · ${c.period}</div>
-      <div style="color:#777;font-size:13px;margin-top:4px;line-height:1.4;">${c.note}</div>
-      <div style="color:#444;font-size:11px;margin-top:4px;">SRC: ${c.source}</div>
-    </div>
-  `).join('');
+    '<div class="section-label" style="margin-top:0;">US Personnel Casualties</div>' +
+    '<div class="retired-note"><b>CASUALTY TRACKER · RETIRED</b><br>' +
+    'No live collector emits casualty tallies as graded Observations. The old ' +
+    'seed counts were removed rather than shown as current.</div>';
 }
 
 // ============================================================
@@ -1562,6 +1483,7 @@ renderTollDetails();
       source: item.source || 'OSINT',
       tag: item.tag || 'posture',
       cocom: (item.cocom || '').toLowerCase(),
+      grade: item.grade || '',        // Admiralty grade (e.g. B2), shown per item
       headline: item.url
         ? `<a href="${item.url}" target="_blank">${item.title}</a>`
         : item.title
@@ -1587,7 +1509,9 @@ renderTollDetails();
 // ============================================================
 (async function hydrateLiveData() {
 
-  // ── Fleet positions ──
+  // ── Fleet positions ──  STUB (Phase 4): kept pending a future AIS collector
+  // that would emit vessel positions as Observations. Until then data/fleet.json
+  // is the last committed snapshot, not regenerated by serve.py.
   try {
     const resp = await fetch('data/fleet.json');
     if (resp.ok) {
@@ -1615,69 +1539,13 @@ renderTollDetails();
     }
   } catch(e) { console.log('[HYDRATE] Fleet: using seed'); }
 
-  // ── Casualties ──
-  try {
-    const resp = await fetch('data/casualties.json');
-    if (resp.ok) {
-      const cas = await resp.json();
-      if (cas.us_kia_confirmed) {
-        // Update topbar Epic Fury numbers
-        const kiaEl = document.querySelector('.cas-group:first-child .cas-kia');
-        const wiaEl = document.querySelector('.cas-group:first-child .cas-wia');
-        if (kiaEl && cas.us_kia_confirmed) kiaEl.textContent = cas.us_kia_confirmed;
-        if (wiaEl && cas.us_wia_confirmed) wiaEl.textContent = cas.us_wia_confirmed;
-        
-        // Update toll data
-        const ef = CONFLICT_TOLL_DATA.find(c => c.name.includes('EPIC FURY'));
-        if (ef) {
-          ef.label = `${cas.us_kia_confirmed} KIA · ${cas.us_wia_confirmed || '348'} WIA`;
-        }
-        renderTollDetails();
-        console.log('[HYDRATE] Casualties updated: KIA=' + cas.us_kia_confirmed + ' WIA=' + cas.us_wia_confirmed);
-      }
-    }
-  } catch(e) { console.log('[HYDRATE] Casualties: using seed'); }
+  // Casualties, equipment losses, and troop-posture hydration removed (Phase 4):
+  // those views are dropped (no Observation equivalent in the store) and their
+  // panels are retired, so there is nothing to overlay and no seed to refresh.
 
-  // ── Equipment losses ──
-  try {
-    const resp = await fetch('data/losses.json');
-    if (resp.ok) {
-      const losses = await resp.json();
-      if (losses.items && losses.items.length > 0) {
-        // Update confirmed loss quantities from live scrape
-        losses.items.forEach(live => {
-          EQUIPMENT_LOSSES.forEach(cat => {
-            if (cat.unconfirmed) return;
-            cat.items.forEach(seed => {
-              if (seed.type.includes(live.type.split(' ')[0]) || live.type.includes(seed.type.split(' ')[0])) {
-                if (live.qty > seed.qty) seed.qty = live.qty;
-              }
-            });
-          });
-        });
-        renderLosses();
-        console.log('[HYDRATE] Losses updated:', losses.items.length, 'entries');
-      }
-    }
-  } catch(e) { console.log('[HYDRATE] Losses: using seed'); }
-
-  // ── Troop posture ──
-  try {
-    const resp = await fetch('data/posture.json');
-    if (resp.ok) {
-      const pos = await resp.json();
-      if (pos.total_middle_east) {
-        const me = FORCE_POSTURE.find(p => p.region.includes('Middle East'));
-        if (me) {
-          me.count = pos.total_middle_east.includes(',') ? pos.total_middle_east + '+' : pos.total_middle_east + '+';
-          renderPosture();
-        }
-        console.log('[HYDRATE] Posture: Middle East total = ' + pos.total_middle_east);
-      }
-    }
-  } catch(e) { console.log('[HYDRATE] Posture: using seed'); }
-
-  // ── Commanders ──
+  // ── Commanders ──  STUB (Phase 4): kept pending a future COCOM-roster
+  // collector (a public org-chart scrape). Until then data/commanders.json is
+  // the last committed snapshot, not regenerated by serve.py.
   try {
     const resp = await fetch('data/commanders.json');
     if (resp.ok) {
@@ -1693,18 +1561,7 @@ renderTollDetails();
     }
   } catch(e) { console.log('[HYDRATE] Commanders: using seed'); }
 
-  // ── Doomsday Clock ──
-  try {
-    const resp = await fetch('data/doomsday.json');
-    if (resp.ok) {
-      const doom = await resp.json();
-      if (doom.seconds_to_midnight) {
-        const el = document.querySelector('.midnight-time');
-        if (el) el.textContent = doom.seconds_to_midnight + 's';
-        console.log('[HYDRATE] Doomsday: ' + doom.seconds_to_midnight + 's');
-      }
-    }
-  } catch(e) { console.log('[HYDRATE] Doomsday: using seed'); }
+  // Doomsday Clock hydration removed (Phase 4): view dropped, figure retired.
 
   console.log('[HYDRATE] Complete — live data overlaid on seed');
 })();
@@ -1983,9 +1840,10 @@ function drawTrack(item, color) {
 CARRIER_GROUPS.forEach(c => drawTrack(c, '#ff3333'));
 ARG_DATA.forEach(a => drawTrack(a, '#ffcc00'));
 
-// ── Add Loss Markers ──
+// ── Add Loss Markers ──  retired (Phase 4): losses view dropped, so no seed
+// markers are plotted. Iterating an empty list keeps the layer group valid.
 let lossIdx = 0;
-EQUIPMENT_LOSSES.forEach(cat => {
+[].forEach(cat => {
   const isUnconfirmed = cat.unconfirmed || false;
   const markerColor = isUnconfirmed ? '#ffcc00' : '#ff6633';
   const labelPrefix = isUnconfirmed ? '⚠ UNCONFIRMED: ' : '✕ ';
@@ -2060,8 +1918,9 @@ MAP_AIRCRAFT.forEach(a => {
   layers.aircraft.addLayer(marker);
 });
 
-// ── Add Posture Markers ──
-FORCE_POSTURE.forEach(p => {
+// ── Add Posture Markers ──  retired (Phase 4): posture-count view dropped, so
+// no seed troop markers are plotted. Empty list keeps the layer group valid.
+[].forEach(p => {
   if (!p.lat) return;
   const deltaSymbol = p.delta === 'up' ? ' ▲' : p.delta === 'down' ? ' ▼' : '';
   const deltaColor = p.delta === 'up' ? '#ff3333' : p.delta === 'down' ? '#00cc66' : '#777';
