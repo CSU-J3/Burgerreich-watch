@@ -20,6 +20,7 @@ import feedparser
 from watchcore import Observation, Source
 
 from . import config
+from ._common import classify, normalize
 from ._http import fetch_text
 
 COLLECTOR = "dvids"
@@ -34,26 +35,9 @@ _THEATER_RE = re.compile(
     re.IGNORECASE,
 )
 
-_TAG_RE = re.compile(r"<[^>]+>")
-_WS_RE = re.compile(r"\s+")
-
-
-def _normalize(text: str) -> str:
-    """Strip HTML tags and collapse whitespace."""
-    return _WS_RE.sub(" ", _TAG_RE.sub(" ", text or "")).strip()
-
 
 def _is_theater(text: str) -> bool:
     return _THEATER_RE.search(text) is not None
-
-
-def _classify(text: str) -> str:
-    """Rule-based obs_type. Domain-first, then posture, else other."""
-    low = text.lower()
-    for obs_type, keywords in config.OBS_TYPE_KEYWORDS.items():
-        if any(kw in low for kw in keywords):
-            return obs_type
-    return "other"
 
 
 def _observed_at(entry: feedparser.FeedParserDict) -> datetime | None:
@@ -74,11 +58,11 @@ def _to_observation(
     if not guid.startswith(config.DVIDS_PRESS_RELEASE_GUID_PREFIX):
         return None  # not a press release (imagery / audio / untyped)
 
-    title = _normalize(entry.get("title", ""))
+    title = normalize(entry.get("title", ""))
     if not title:
         return None
 
-    summary = _normalize(entry.get("summary", ""))
+    summary = normalize(entry.get("summary", ""))
     if not _is_theater(f"{title} {summary}"):
         return None  # outside the CENTCOM theater
 
@@ -104,7 +88,7 @@ def _to_observation(
         ),
         fetched_at=fetched_at,
         observed_at=observed_at,
-        obs_type=_classify(f"{title} {summary}"),
+        obs_type=classify(f"{title} {summary}"),
         title=title,
         reliability=config.DVIDS_RELIABILITY,
         credibility=config.DVIDS_CREDIBILITY,

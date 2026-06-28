@@ -4,6 +4,8 @@ Project-specific, so it lives in Burgerreich (not watchcore). Collectors read
 these values; they do not hardcode feed lists or grades in their bodies.
 """
 
+from urllib.parse import quote
+
 # --------------------------------------------------------------------------
 # DVIDS collector
 # --------------------------------------------------------------------------
@@ -86,3 +88,48 @@ OBS_TYPE_KEYWORDS = {
         "deter", "deterrence", "presence", "exercise",
     ],
 }
+
+
+# --------------------------------------------------------------------------
+# News RSS collector
+# --------------------------------------------------------------------------
+
+# Aggregated-news baseline: reliability C (fairly reliable), credibility 3
+# (possibly true) — lower than DVIDS, since these are secondary reporting. A
+# named reputable outlet can be bumped per feed via the optional reliability /
+# credibility keys in NEWS_FEEDS below.
+NEWS_RELIABILITY = "C"
+NEWS_CREDIBILITY = 3
+
+
+def _google_news(query: str) -> str:
+    """Google News RSS search feed for a query. The query IS the CENTCOM-theater
+    scope — no client-side allowlist is applied to news (unlike DVIDS), because
+    each query is theater-specific."""
+    return f"https://news.google.com/rss/search?q={quote(query)}&hl=en-US&gl=US&ceid=US:en"
+
+
+# Feed list. Each entry: name, url, and optional per-feed grade override
+# (defaults to the C/3 baseline). Google News populates the outlet via the RSS
+# <source> element, so `publisher` resolves per item; the feed `name` is only a
+# publisher fallback for direct-outlet feeds (e.g. USNI) that carry no <source>.
+NEWS_FEEDS = [
+    {"name": "Google News: CENTCOM",
+     "url": _google_news('"U.S. Central Command" OR CENTCOM')},
+    {"name": "Google News: Fifth Fleet",
+     "url": _google_news('"Fifth Fleet" OR "Combined Maritime Forces"')},
+    {"name": "Google News: Strait of Hormuz",
+     "url": _google_news('"Strait of Hormuz" OR "Persian Gulf"')},
+    {"name": "Google News: Red Sea / Houthi",
+     "url": _google_news('"Red Sea" Houthi')},
+    {"name": "Google News: Iran strike",
+     "url": _google_news('Iran U.S. military strike')},
+    {"name": "Google News: Iraq / Syria",
+     "url": _google_news('Iraq OR Syria U.S. military')},
+    {"name": "Google News: Yemen / Houthi",
+     "url": _google_news('Yemen Houthi')},
+    # Named reputable defense outlet (direct feed, no <source> element, so
+    # publisher falls back to this name). Bumped above the aggregated baseline.
+    {"name": "USNI News", "url": "https://news.usni.org/feed",
+     "reliability": "B", "credibility": 2},
+]
