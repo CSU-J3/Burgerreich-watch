@@ -31,9 +31,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4   # default GITHUB_TOKEN creds -> push works
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true   # keep GITHUB_TOKEN creds so the push step works
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -60,13 +62,13 @@ jobs:
 
       # Deploy the docs/ produced by this run (fresh feed.json) straight to Pages.
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload docs/ artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./docs
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
