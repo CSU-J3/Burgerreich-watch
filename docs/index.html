@@ -429,42 +429,36 @@
 
 <!-- ═══ MAP LAYER CONTROLS ═══ -->
 <div class="map-controls">
-  <button class="map-ctrl-btn active" onclick="toggleLayer('carriers',this)">CSG</button>
-  <button class="map-ctrl-btn active" onclick="toggleLayer('args',this)">ARG</button>
+  <!-- CSG/ARG/TRACKS (fleet seed), AIRCRAFT (ADS-B seed), POSTURE and LOSSES
+       map layers all retired: each plotted seed with no live collector. Only
+       BASES (fixed installations) and the AOR boundaries — reference geography,
+       not live-tracking claims — remain. -->
   <button class="map-ctrl-btn active" onclick="toggleLayer('bases',this)">BASES</button>
-  <!-- POSTURE and LOSSES map layers retired (Phase 4): both plotted dropped-view
-       seed; their toggles and markers are removed rather than shown as live. -->
-  <button class="map-ctrl-btn active" onclick="toggleLayer('tracks',this)">TRACKS</button>
-  <button class="map-ctrl-btn active" onclick="toggleLayer('aircraft',this)">AIR</button>
 </div>
 
 <!-- ═══ SIDEBAR ═══ -->
 <div class="sidebar" id="sidebar">
   <button class="sidebar-toggle" id="sidebar-toggle" onclick="const s=document.getElementById('sidebar');s.classList.toggle('collapsed');this.textContent=s.classList.contains('collapsed')?'▶':'◀'">◀</button>
   <div class="sidebar-tabs">
-    <button class="sidebar-tab active" onclick="switchSidebar('csg',this)">CSG TRACKER</button>
-    <button class="sidebar-tab" onclick="switchSidebar('cocom',this)">COCOM</button>
+    <button class="sidebar-tab" onclick="switchSidebar('csg',this)">CSG TRACKER</button>
+    <button class="sidebar-tab active" onclick="switchSidebar('cocom',this)">COCOM</button>
     <button class="sidebar-tab" onclick="switchSidebar('posture',this)">POSTURE</button>
     <button class="sidebar-tab sidebar-tab-red" onclick="switchSidebar('casualties',this)">CASUALTIES</button>
     <button class="sidebar-tab" onclick="switchSidebar('aircraft',this)">AIRCRAFT</button>
     <button class="sidebar-tab" onclick="switchSidebar('tools',this)">TOOLS</button>
   </div>
   <div class="sidebar-content">
-    <!-- CSG Panel -->
-    <div class="sidebar-panel active" id="panel-csg">
-      <div class="csg-subtabs">
-        <button class="csg-subtab active" onclick="switchCSGSub('carriers',this)">CARRIER STRIKE GROUPS</button>
-        <button class="csg-subtab" onclick="switchCSGSub('args',this)">ARG / MEU</button>
-      </div>
-      <div class="csg-subpanel active" id="sub-carriers">
-        <div class="table-scroll"><table class="csg-table"><thead><tr><th>CSG</th><th>Carrier</th><th>Status</th><th>Region</th></tr></thead><tbody id="csg-body"></tbody></table></div>
-      </div>
-      <div class="csg-subpanel" id="sub-args">
-        <div class="table-scroll"><table class="csg-table"><thead><tr><th>ARG/MEU</th><th>Ship</th><th>Status</th><th>Region</th></tr></thead><tbody id="arg-body"></tbody></table></div>
-      </div>
+    <!-- CSG Panel — retired (pre-Phase-5): no live vessel collector exists, so
+         the seed carrier/ARG board is not rendered as current tracking.
+         renderCSG() is now a no-op; data/fleet.json stays as the AIS stub. -->
+    <div class="sidebar-panel" id="panel-csg">
+      <div class="retired-note"><b>CSG / FLEET TRACKER · RETIRED</b><br>
+        No live collector emits vessel positions as Observations. The seed
+        carrier/ARG board was removed rather than shown as current. A future AIS
+        collector (the data/fleet.json stub) would restore this.</div>
     </div>
-    <!-- COCOM Panel -->
-    <div class="sidebar-panel" id="panel-cocom">
+    <!-- COCOM Panel — default landing panel (holds the live Intel Feed) -->
+    <div class="sidebar-panel active" id="panel-cocom">
       <div class="cocom-tabs" id="cocom-tabs">
         <button class="cocom-tab active" data-cocom="centcom">CENTCOM</button>
         <button class="cocom-tab" data-cocom="eucom">EUCOM</button>
@@ -501,10 +495,13 @@
     <div class="sidebar-panel" id="panel-casualties">
       <div id="toll-details"></div>
     </div>
-    <!-- Aircraft Panel -->
+    <!-- Aircraft Panel — retired (pre-Phase-5): MAP_AIRCRAFT was seed rendered
+         as live ADS-B with no collector behind it. renderAircraft() is a no-op. -->
     <div class="sidebar-panel" id="panel-aircraft">
-      <div class="section-label" style="margin-top:0;">Notable Tracks (ADS-B / OSINT)</div>
-      <div id="aircraft-body"></div>
+      <div class="retired-note"><b>NOTABLE TRACKS (ADS-B) · RETIRED</b><br>
+        No live ADS-B collector. The seed aircraft tracks were removed rather
+        than shown as current OSINT tracking.</div>
+      <div id="aircraft-body" style="display:none;"></div>
     </div>
     <!-- Tools Panel -->
     <div class="sidebar-panel" id="panel-tools">
@@ -516,10 +513,10 @@
 
 <!-- ═══ THREAT GAUGE ═══ -->
 <div class="threat-gauge">
+  <!-- Global Uncertainty Index retired (pre-Phase-5): the CRITICAL level and
+       89% bar were hardcoded with no source behind them. -->
   <div class="threat-gauge-title">Global Uncertainty Index</div>
-  <div class="threat-level" style="color:#ff3333;">CRITICAL</div>
-  <div class="threat-bar"><div class="threat-fill" style="width:89%;"></div></div>
-  <div class="threat-labels"><span>LOW</span><span>GUARDED</span><span>ELEVATED</span><span>HIGH</span><span>CRITICAL</span></div>
+  <div class="threat-level" style="color:var(--text-dim);font-size:14px;">RETIRED · no live index</div>
   <!-- Doomsday Clock retired (Phase 4): the value was a scrape with no
        Observation equivalent in the store, so the frozen seed figure is no
        longer shown as current. -->
@@ -1076,12 +1073,12 @@ const CONFLICT_TOLL_DATA = [
 // ============================================================
 
 function renderTicker() {
-  const track = document.getElementById('ticker');
-  // Duplicate for seamless scroll
-  const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
-  track.innerHTML = items.map(t =>
-    `<span class="ticker-item"><span class="label">${t.label}</span><span class="${t.cls}">${t.val}</span></span>`
-  ).join('');
+  // MOVEMENTS ticker retired (pre-Phase-5): the ticker seed was presented as
+  // live movement flashes. Rather than scroll fake movements, the ticker states
+  // it has no live feed. (A future enhancement could drive it from feed.json.)
+  document.getElementById('ticker').innerHTML =
+    '<span class="ticker-item"><span class="label">MOVEMENTS</span>' +
+    '<span style="color:var(--text-dim);">no live ticker feed — retired</span></span>';
 }
 
 function daysAgo(dateStr) {
@@ -1094,31 +1091,9 @@ function daysAgo(dateStr) {
 }
 
 function renderCSG() {
-  const body = document.getElementById('csg-body');
-  const sortedCarriers = [...CARRIER_GROUPS].sort((a,b) => new Date(b.lastReported) - new Date(a.lastReported));
-  body.innerHTML = sortedCarriers.map((c) => {
-    const origIdx = CARRIER_GROUPS.indexOf(c);
-    return `
-    <tr style="cursor:pointer;" onclick="flyToShip('csg',${origIdx})" title="Click to locate on map">
-      <td><span class="csg-name">${c.name}</span></td>
-      <td><span class="csg-name">${c.carrier}</span><br><span class="as-of">as of ${c.lastReported} · ${daysAgo(c.lastReported)}</span></td>
-      <td><span class="status-${c.status}">${c.status.toUpperCase()}</span></td>
-      <td><span class="cocom-tag tag-${c.cocom}">${c.cocom.toUpperCase()}</span></td>
-    </tr>`;
-  }).join('');
-
-  const argBody = document.getElementById('arg-body');
-  const sortedArgs = [...ARG_DATA].sort((a,b) => new Date(b.lastReported) - new Date(a.lastReported));
-  argBody.innerHTML = sortedArgs.map((a) => {
-    const origIdx = ARG_DATA.indexOf(a);
-    return `
-    <tr style="cursor:pointer;" onclick="flyToShip('arg',${origIdx})" title="Click to locate on map">
-      <td><span class="csg-name">${a.name}</span><br><span class="as-of">as of ${a.lastReported} · ${daysAgo(a.lastReported)}</span></td>
-      <td><span class="csg-name">${a.ship}</span></td>
-      <td><span class="status-${a.status}">${a.status.toUpperCase()}</span></td>
-      <td><span class="cocom-tag tag-${a.cocom}">${a.cocom.toUpperCase()}</span></td>
-    </tr>`;
-  }).join('');
+  // Retired (pre-Phase-5): no live vessel collector, so the seed carrier/ARG
+  // board is not rendered as current. The retired notice is static in
+  // #panel-csg; this is a no-op so nothing repopulates it.
 }
 
 // ============================================================
@@ -1259,22 +1234,21 @@ function renderCOCOM(cocom) {
     <div style="margin-bottom:8px;">${data.commanderUrl ? `<a href="${data.commanderUrl}" target="_blank" style="color:var(--text-bright);text-decoration:none;border-bottom:1px dashed var(--text-dim);transition:color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-bright)'">${data.commander}</a>` : data.commander}</div>
     <div class="section-label">Key Installations</div>
     <div style="margin-bottom:8px;">${data.keyBases}</div>
-    <div class="section-label">Current Operations</div>
-    <div style="margin-bottom:8px;">${data.currentOps}</div>
-    <div class="section-label">Recent Activity</div>
-    ${data.recentActivity.map(a => `<div style="padding:5px 0;border-bottom:1px solid #151515;">› ${a}</div>`).join('')}
     ${feedSection}
   `;
+  // The Current-Operations line and Recent-Activity list are removed
+  // (pre-Phase-5): both were hardcoded posture/fleet prose with no Observation
+  // behind them, sitting above the live feed, so they are not rendered as
+  // current. AOR / HQ / Commander / Key Installations stay — fixed reference
+  // facts (Commander hydrates from the commanders.json stub), the same
+  // honest-static line as the kept BASES map layer. The unused fields remain in
+  // COCOM_DATA but nothing renders them.
 }
 
 function renderAircraft() {
-  const body = document.getElementById('aircraft-body');
-  body.innerHTML = AIRCRAFT_WATCH.map(a => `
-    <div class="aircraft-entry">
-      <span class="aircraft-callsign">${a.callsign}</span> <span class="aircraft-type">${a.type}</span>
-      <div class="aircraft-detail">${a.detail}</div>
-    </div>
-  `).join('');
+  // Retired (pre-Phase-5): the aircraft seed was presented as live ADS-B with no
+  // collector. The retired notice is static in #panel-aircraft; this is a no-op
+  // so nothing repopulates it.
 }
 
 function renderLosses() {
@@ -1509,35 +1483,10 @@ renderTollDetails();
 // ============================================================
 (async function hydrateLiveData() {
 
-  // ── Fleet positions ──  STUB (Phase 4): kept pending a future AIS collector
-  // that would emit vessel positions as Observations. Until then data/fleet.json
-  // is the last committed snapshot, not regenerated by serve.py.
-  try {
-    const resp = await fetch('data/fleet.json');
-    if (resp.ok) {
-      const fleet = await resp.json();
-      if (fleet.carriers && fleet.carriers.length > 0) {
-        fleet.carriers.forEach(live => {
-          const match = CARRIER_GROUPS.find(c => c.hull === live.hull);
-          if (match) {
-            match.region = live.location || match.region;
-            match.status = (live.status || match.status).toLowerCase();
-            match.lastReported = (fleet.updated || '').slice(0, 10);
-          }
-        });
-        fleet.args && fleet.args.forEach(live => {
-          const match = ARG_DATA.find(a => a.ship && a.ship.includes(live.hull));
-          if (match) {
-            match.region = live.location || match.region;
-            match.status = (live.status || match.status).toLowerCase();
-            match.lastReported = (fleet.updated || '').slice(0, 10);
-          }
-        });
-        renderCSG();
-        console.log('[HYDRATE] Fleet updated:', fleet.carriers.length, 'carriers');
-      }
-    }
-  } catch(e) { console.log('[HYDRATE] Fleet: using seed'); }
+  // Fleet hydration removed (pre-Phase-5): the CSG/fleet panel and its map
+  // layers are retired (no live vessel collector), so there is no seed board to
+  // overlay. data/fleet.json stays on disk as the named AIS stub, but the UI no
+  // longer renders its fallback seed as current tracking.
 
   // Casualties, equipment losses, and troop-posture hydration removed (Phase 4):
   // those views are dropped (no Observation equivalent in the store) and their
@@ -1796,8 +1745,9 @@ window.ftLayers = {
 };
 const layers = window.ftLayers;
 
-// ── Add Carriers ──
-MAP_CARRIERS.forEach(c => {
+// ── Add Carriers ──  retired (pre-Phase-5): no live vessel collector, so no
+// seed carrier markers are plotted. Empty list keeps the layer group valid.
+[].forEach(c => {
   const icon = c.deployed
     ? makePulseIcon('#ff3333', 14)
     : makeIcon('#00cc6644', 10, '#00cc66');
@@ -1809,8 +1759,9 @@ MAP_CARRIERS.forEach(c => {
   layers.carriers.addLayer(marker);
 });
 
-// ── Add ARGs ──
-MAP_ARGS.forEach(a => {
+// ── Add ARGs ──  retired (pre-Phase-5): no live vessel collector, so no seed
+// ARG markers are plotted. Empty list keeps the layer group valid.
+[].forEach(a => {
   const icon = makePulseIcon('#ffcc00', 10);
   const marker = L.marker([a.lat, a.lng], { icon })
     .bindPopup(popupHTML(a.name, [
@@ -1837,8 +1788,9 @@ function drawTrack(item, color) {
   layers.tracks.addLayer(prev);
 }
 
-CARRIER_GROUPS.forEach(c => drawTrack(c, '#ff3333'));
-ARG_DATA.forEach(a => drawTrack(a, '#ffcc00'));
+// Movement trails retired (pre-Phase-5): fleet tracking has no live collector.
+[].forEach(c => drawTrack(c, '#ff3333'));
+[].forEach(a => drawTrack(a, '#ffcc00'));
 
 // ── Add Loss Markers ──  retired (Phase 4): losses view dropped, so no seed
 // markers are plotted. Iterating an empty list keeps the layer group valid.
@@ -1895,8 +1847,9 @@ MAP_BASES.forEach(b => {
   layers.bases.addLayer(marker);
 });
 
-// ── Add Aircraft ──
-MAP_AIRCRAFT.forEach(a => {
+// ── Add Aircraft ──  retired (pre-Phase-5): no live ADS-B collector, so no seed
+// aircraft markers are plotted. Empty list keeps the layer group valid.
+[].forEach(a => {
   const icon = L.divIcon({
     className: 'custom-marker',
     html: `<div style="
