@@ -1,5 +1,313 @@
 [
   {
+    "date": "2026-11-23T04:44:44Z",
+    "title": "Tankers Attacked Over the Weekend in Gulf of Oman and Strait of Hormuz - Ship & Bunker",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNb1RPejg4dTJzYjRpYmp0ejRKM0dQMnY4VXM1emJlRkozLUV2Y0dxNFVnTjQ4RUZhUzVvZ2NmalU1cmdqVlMycWRwQ1Q4RGxlWUZfQkJwakFaNVBkRkFfT3dtSndiLTQ0Vm1VMm5QX3IwZXRTUXZwbWU0VWZnSG02Z1B6RUQ1eGNkT3NlNHktWVdiVWVqV2ZaTUJBeEJROVVHZjZENldPTnM5aDh1WElwU2kwbw?oc=5",
+    "source": "Ship & Bunker",
+    "tag": "naval",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T04:15:49Z",
+    "title": "Briton swims Strait of Hormuz to urge end to conflict - NHK\u30cb\u30e5\u30fc\u30b9",
+    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBiQ3pVdGFZdVExQl8walMtWHdoVjNIQUVYRHVzNkU5MlVzYmVmeTVvZHR0T0NXZ0xQVDFoTlpHYThWalZnRFdwWlRVUHctNVlmTzVFYWpQSjZiTUk1MWF0VlZjUQ?oc=5",
+    "source": "NHK\u30cb\u30e5\u30fc\u30b9",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:57:33Z",
+    "title": "Iran\u2019s IRGC says two supertankers struck mines in Strait of Hormuz - National Herald",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcElxblRDd2EwaGFjRVFjeS1NNU5ON01DX3FjekpjX2hpVVNJekRRVjFuNWdVbVpZbF9IRzlkcmZILW92dS1jaHRaNEVPd1ExM3VWOWpHTkFMdENFMXR0N2hFV1FidG1uSE0za2ZGV3lWaUxnRjVFSlhycW93LVk3OTFKSllLYUVQRzIzTThtZW5fQVlmdzZoblVYNHZRNS1iUGtuQWhPY0hQeU4xVG1pVzJSZFAzd9IBwwFBVV95cUxQR0x2Rmo0MmVlQk5DZUx1Rk9Pd2pKWjlDWnpoWm1LSllwa0xDMFZmU3FSWHdxR0x4eTRLSUl1SFJHSGpfMEtsdGpadUpmWUdoa1h0eG5EbU0ySTF6OUNDeU5LZEtwQ09jbFhwMGxPcUZ4ZWlJb2psRmZpRm9hTXdBU0Zxc0lBUEZjSTdtTzZoQTJ4VlA5ZGtVbGhHdkpwbHluYVA1bXc1cGI3cHI1TDlFTnFmbG8xamc5dGdsNnducXcwZ2c?oc=5",
+    "source": "National Herald",
+    "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:47:18Z",
+    "title": "Yemen's Houthis claim strikes on Saudi oil refinery, radar facility - chinadailyhk",
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1KMzFEclNGTmZzQ2ljUmtId2l5YWxVT1p3MGJNNmJhbUR2QmE0cGI0dF9IYjRKcmhIckFDOHRwVDVOZEx5a1BYUVc4aUxNYXF4bVp3VzJRaVM?oc=5",
+    "source": "chinadailyhk",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:22:30Z",
+    "title": "UN maritime agency endorses coastguard task force for Red Sea safety - The National",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdTZuZHowM1REYWZXeGFxQVpXNWp4V2g3d0l1SEVCeG1wTGc3LXFxemFqRDJ3aGVVR2c1QlZ2WHQxLW1EcEpVQ0sybE01WWQyX0VDTEw0YkNmNFdLT2Jkd0Vkc2gwTzRtZXVGUGNJZ3lqTVAtVU5pVFU4TlA0dUs0d0FLUzZFVzAyY05lUjUxS2xYdmVuU3NXbjZUZXU2TDlGOVhlR1dTRG9lbTYzVDFTU3R3?oc=5",
+    "source": "The National",
+    "tag": "naval",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:22:26Z",
+    "title": "Live - Trump considers Iran strikes after new year, Israel pushes for earlier action - Iran International",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1QSGNMZThLWmFoay1wNWFqWEZVdjRnOVAtQ2RmSFJVallkTWFxWE5oVWlXUF93MHByYlYyWWFMZEpTdEJkT2hpWm9GblNFdGpnU1lpaGF5Rl9RcFlMX1E?oc=5",
+    "source": "Iran International",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:22:13Z",
+    "title": "Korea seeks Qatar LNG priority after disruptions - Korea JoongAng Daily",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUXFlVndkNmhlX3BJRGJ6UWJ2T0hpNVJEMExRd0hRdmplTjc5UDBTeWhlNlJMM3g5OXBoUnIwcGo2dm5JcFpWc1VDM3ZOVGpNS3lEeGlfRHhPdEM4NW5xY1djUUl0Y2pBdEdmRUtBSHdCbEhJY1NKU3RlQWhraGctTGJpeVprVlNiRmVUaWlJUGh5UVM3TkU1cGFKdHlZN3ZIZXJz?oc=5",
+    "source": "Korea JoongAng Daily",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:17:50Z",
+    "title": "Will he, won't he? As talks drag, Trump teases Iran strikes after New Year - India Today",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNS1pQMnZxNGdlY2psRTZ5dHRVT3BoamR0TU9UdjZaQVZQR2ZiT01lNEpaZkFCdl94RWkxdGtVNnVBNEtkTzhvcVB0Ym42aFNGTjM4U0h6LTJZTnZ4T0RIWmZmUGwxUjlsWG5JZTU0TXFhN3NFUldzX2R2R2NrZ0VlSFhZdkVsay1ZOVFlSkVSTFdOdGFySUZrS1hZNWZMWW82U05yZ2xCbGtHcUpUal9SeXgtRXPSAboBQVVfeXFMTU9CR3B6MWRTdm9BSnpvc256aS1McWpLMkdQT1lfTXlzNTAxRVZtTXlOblg1a1VYbTVDdXZKbUtSRFg3a00wUVNVcFk5cDRJb05PYnJkTE1keWVCdWl0OXZ0NlctTDlabkdwa3Vac2o5SVZuRFdlVXVIcGtiVHRlMjdHLUtRblV3NkpOdkl2QmplczBkZklMTFdyeENjVXRtcElhLVJ5dHBnSHJmbVdMbXljeEZ4MnhVOVRn?oc=5",
+    "source": "India Today",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:15:41Z",
+    "title": "US to launch fresh strikes on Iran after New Year? Trump issues fresh warning to Tehran - The Week",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSWxpcWpLS0pzMnRiMXdxajFiLUxCVV83RS1FRWVaVkl3MzdHdURHYU1yNDVWUWlpdnZDSzhaT1ZOYWZuS01xbnVmNU4zczZmOEtBT1k1UHVxMDF2SVNYMk42UHFBNDd0R3FEMlZ2dWNkTzByQVF4dzhyX3Q4Z0NvSEhoUlY0YnotNURxbFp2M202ckFFX0FtbHBlYXUxSWlYeXY2QzZIQ1pXVG0xdEMzMk13UE83S1d50gG-AUFVX3lxTE9ibHpmT3FTMXVQdHl5RjF0OUZjRUdRM3dCMHVld1g0UFFzU3h6X2hTX3B1RFBTLVBLbkNGRmtxX1M1LXJHY25hQ2VoYkpyelhtM0ZhSDJDV0RQdmFlYU9Kc0g0UEZ1TFd2R2pDU1lYazF6YU1MMmZrWkdqX1FCdmRaakZMcER4M2Y0b1NZak1PQWNXbkJjYlRPTEZaSjg3UkpITkk2R3FJS1dNbDl4OXdMVGVBSzVMTlpDOTBCQXc?oc=5",
+    "source": "The Week",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:15:00Z",
+    "title": "'Could ignite multiple fronts': Israeli military warns Netanyahu Iran strike may trigger wider regional w - The Times of India",
+    "url": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxNMmJXdWh2cGtCZW1aV0w3Vzh1ZWg4MzZqcGxPQTRWTlVua0NYWVlEeERmbjBlMnE2YzZkaUhGamJjQTlpRWFDNHNxazJCVDFnV2lZT0FHY3lkU282eVQtaXdSdWtmMnVVSTVNRjJlS0dibmgyNW9Qamp6ME04YzJ2elI5SGp1SXFNX1A2a1ZMVUdEeGpSRzBzTGM0YTJyWG9jY0N5bTdWSEMwYXR2TzFudEJBSm1vcUh0OEhXSmdzLXROZ0VjcnZGRzFMNlZXTl9KRTE3bmRjTHU5TjVJcnpkdGQwVTFMWDZYZVEtOGZyRWo3RXFQMnA4aWRrZ2VWZWcxa3hFanBZd2liN0g0eTd1WVI5OF9NUTN2WmpmRkZqVlBFV1Jub1plTDVjVkJZb0lzZzRWbmtjcWRpdVhKaEVReGswekdzWkJTOGFVcUQwdS04bmVRdzJXTGdyVnJ0SUI3a3fSAZcCQVVfeXFMTjYwNDRaa0h3aXFyYlExUkU1Nllmdm44RXFMVGJtOW80dmdSVEJCQVViNWo0alh1Mk5hQnBLc3hLYjV4NmpQcWNOcjY2bjJ4clNUS2gxUkV5QTBfSjlSVEJBTktJdkRKbC1WajdSbnRJdmozTmZhVVBIV0RiNm14SXZzVW9pSllwWTRLU2RYempMcGxVSzM0NzRzUkxnUGxfZFFiWk45Vno2aHhLY0phU3Z6bkRrcjNLdXFGWkdGSVdyTGZuMmhjdW81M2Jxelg4cVMyZFNvc2dxbU84cVh5OEVibzJ4Mk9KdENLUDU0aTNYb1VCOW1OV2tDZEh2UUFVR3owRzhJT0gwZndweUZXallhckV0N2w4?oc=5",
+    "source": "The Times of India",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T03:14:00Z",
+    "title": "2 \"violating\" supertankers explode after hitting mines in Strait of Hormuz: Iran's IRGC - \u5df4\u58eb\u7684\u5831",
+    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOUlR5ZnBzd3czd0I3b0hXa09PdTlTdWlPeV80RVFfUXc4ZXRjUWdoQ2hRTFItdG54dy1PRUlZcWxFd3RkWllYY2dicEw0Rm9paGRZUE1FNW8wVlZGSEV0UVRueVo1NU5qWF9jSlZkVUZZMjJlTVh0VUxNMDJoMEJpbU1YWk1SdkgzVDVBZmhWeWdQTEdkUDRNeHJSeDVTWlhuaHUxbDhVQzBUZ2RZalRTbEdMYzlGRkI2ZjBTRHBWSWQ0LW5RRXZXS3hvcTBOTEcx?oc=5",
+    "source": "\u5df4\u58eb\u7684\u5831",
+    "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:45:00Z",
+    "title": "US seeks to seize a Beverly Hills mansion allegedly bought with $30 million from a scheme involving more - The Times of India",
+    "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxNU2FfczZYQTFzblpYSi1fT3FvdFBKTzM5T3pWVVRkT3hTdXhFRU1yOTF1eFdZb2xTbXJjc2U2Wm9PN0NHUm1JeVNhY2xqUUJ2Ry1kUkxCX08wQkhnaVJ1b2RSVTFkd3lQaHpQc1NoUWc4Q0w2aG5VN0NRVk1mWHVmNEdXdkJGSDJQeXhadTBaT1ZIRDFGTjJ6MlFyQmg5R2FLVU9Tdm1hMDJVUXF2WjdHU0tjVl9OV2xKRWhyeUg5UnBxd0IxVVhWcF8xel8zSHdPRjM4bVEyR0ZoYWg0cl9wN2EzeGtnRmZoUVd5WUtFOEZIUVN4ODB6eHQxWDM2QnZ1TEVaam5acEs1c0ZRb3laTW45dmUwQnhscXNpYkpJc3NSNDMtTkJRZjF6bjRncDlidzVvZ0RlM0ZSZHEzeUVLSzBwa0RxSUlHSloxQnQ0VmlNLTJQSVY0UTVUd0p5aE1kam5v0gHoAkFVX3lxTFBPSEhUYlZtdWFJZmJ1akFoc3hsVXU1cXRzRHM2VmQ2XzlVZXlHU3JmWkxUQUhyZmt6MjVPSnI1bHkzTzJPNmRqZFBITEtVUkY5UHlBTVM1ZU8xUk5pRkxoWUkxbW5DcjYyVUdCdTBzZkRwVXUxOVZLMDZqaXZaVkk2OTl4OUNsaHJoTTNGeTctbVRBVGV0bDQxTmJ3bDgyTkstSmVKMVFwcjlqZ3BsZ3lCclRFSnNYX1hYUGZtc2dvOTFtX1I0V0NpMHdacllXY0pJNVV5a0ZfUWRNWGFOQkVfWXdCd056dEdCZHh3Q1FhQWYtZVhVMklieV91dm9VS2U0MmpobXV6TV9mYk4ydlNNeUhLM3FBVmdQVXhVaE5XcGNnRThpNUJtakU2c2dqXzlwenVCQWd6d09ZQ3ZJVFZ6bE9CYU5fUXJBUE0yZDVpdlRwVmNNalh0bTE0QTZNV3Zlcl9vWFd4SQ?oc=5",
+    "source": "The Times of India",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:43:46Z",
+    "title": "Trump Sets New Year Deadline For Iran, Warns Of Military Strikes - NDTV",
+    "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZ0pCeDdaQWRvR0toT1FfMmV3ODdwMGplQTU5SDBKTG9KSllQamdiMVpiQkkwSVd6bC1TRzRwZXZQaF9KcTdndlkxdWFmQ2k3WjZUWmEyZ215c1dDcmhsNTlGbXVHT2h2QV9rY0ZfM0ZqOUNhVVozYXFfTm9PalMxVXh1S05naThrWEVuRzh6VWVzNkQwQk45eExaeVU0SUtMWWVnRlJRUXZVNzNDOWEyQ2hnd1B3YXpSZXA5cDNBN3dFWFlDVlBKaUNzZ09xaWNvY3fSAdoBQVVfeXFMUHBHWnFuZU9paXNpNEZDUFpJN09yRmdXRWF5bFNJN2ZPSXdaTDdnbXpwMF9HdjJtUXRJMlV6bDJfMHhfVmRPUHhBMEdnUXNLWWljZ0RBNjh3ci1CQlgwdmdLeTVSTE1FUXhvdlMwVGZnODcwcnRpTWFPVjJvaEZlMzVJUDlwaU9zMlo5NkdVUXpJdGpYMUdUcFpYQ1hkb2pBTXRqcFFGTnhHSFBZb2hCa3dRRnU2NnNiUHFScjA3UVY3M1p6aDVLRi13YTdMdGlIUk9aM2xteE9EekE?oc=5",
+    "source": "NDTV",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:38:56Z",
+    "title": "Yemen\u2019s Houthis claim strikes on Saudi oil refinery - The Avenue Mail",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQb1VFeWM5Y1VQbEZvVy1PVl92Mmg0ZzVGclNndGpFUHFGQzE4WHgtYnhiMFhSYmlOa3UzVFJNaGQ0c1VkRVpHMnVyajBISkhmRHBOT3cxMGJpZHBUeHJUb3NxOE5tYkxneTZEazB6RGNFZkUxOTdEeFFTdWJHMENQamluVGxLUnpPRDdNMA?oc=5",
+    "source": "The Avenue Mail",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:25:15Z",
+    "title": "UPDATES: US War on Iran, Day 269 \u2014 Houthi Missile Attacks on Saudi Arabia - EA WorldView",
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM2RrVEhkLTl5UDFBVUdjZ1NZTXN2RzgzSnhUUGZ3enFsWVA1ZllBbUc2QU9UNVpkcDN3UUFiMlpfVHZVVzBjYUtScVg1UDFMYmFNLXhjLVc5aG1xSjhRQ0J2ZXpNVHRYbEx2NmxrTXRlZ09BUHdqZ2tuTms2a3pNWGtR?oc=5",
+    "source": "EA WorldView",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:20:38Z",
+    "title": "Pentagon Blocks US Senators From Gulf Bases, Hegseth Hiding Irans Devastating Strike Damage - The Times of India",
+    "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPa0lwV21SN2VWVmtQamZNb19rYnlZSlpiMmp5VDRMTWd3UUtQY203WTc5Tm9kck1Pc2NmWXdRNVFzemlEdDY5QnNvTU8wYkx0UFFrOTRvX2oxSVZCNmFhLW52OTZiYnU1Mks3QWtWUDJMdG9GQWQxRk9PTHBlcGYyVnU4VWVrUTdWWmhtU1ZQem5lYm5XWmxXNmxLMVpSU0R0T0dYUUFHNWFSdmswSW1QOTlZNXlLMFBjTGV6LXdXb2lYeGZGbVNIWUFETGtSVEViRkgweXBDTURaQjVfX2xiaVZ6dkZUZi1VRkpvUFREeHJNR2Z0TFk1Q2t4dzJ6UG9Z0gGGAkFVX3lxTFB2Z21JZllLRllDcDZqX0VYQ3VaMFMxdE81X3pLTXJDR1JCMFV5Vl9EbmdzNzh2TkYzcjNlSFRxdDNmd1R0bEw5Z3VJdnAyMmoxVTdZTXhqTWtUVVMyVjRPQU05dFFzTGVESGVEV3FkaDhGbjV4NUdqbWRLSkx4Z1ozendPR2w0Si16VmowSnRodEpENTRqWlhRT1RzbC1BcmV1M1BwSkktbzhiSXRKYVVobmZGYV8yOFptLUdYT3NiSEd1Wk16OWFnMWtENGFFY0U4U21sSk9IMmMzTlVPMmxRSWdlWGdaRWI1YlB4V3VwR3V3eVhEUElYeFZ3c3BqVmUtR0hxSVE?oc=5",
+    "source": "The Times of India",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:19:00Z",
+    "title": "IRGC downs US drone near Strait of Hormuz - \u5df4\u58eb\u7684\u5831",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQaHhBZUNEZFRoT1ExaXlwQXlPNnNaOElra1hDUjV3TUIySkZrdlpqTTJ5a1JYeHhmcTBlODNJeVlsZk1UQjEwcHdrRmgxM3Z0SFBsV1ZDdXpSeWNzc2Y4cUwtV2Vvb1E3Q09ZVnlyV0ZUNmNvYVA5M1AwR1BDU1JBUFpYdkJiMUJ0VURDUDJVdXVpdFI3NmE3cg?oc=5",
+    "source": "\u5df4\u58eb\u7684\u5831",
+    "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:03:09Z",
+    "title": "6 Civilians Injured in Houthi Shelling , Sniper Attacks in Yemen's Taiz - Yemen Online",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OTDVfVXVHeUJkVFBUZGVDX1RjTnRubmpvQmJkVjlCT0FDZDdPQl9tSzMxd3ZYOHpldE8zMFFmcTUyVmRZNjhsVkxoaDJlTjFCdl9EekxfLTFqQQ?oc=5",
+    "source": "Yemen Online",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T02:01:21Z",
+    "title": "Airstrikes Target Houthi Positions in Yemen\u2019s Hodeidah as Drones Circle Sanaa - Yemen Online",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBTZm1ON3VNckJvako2MzNjMmFKbFZsMXhGcmdnWkFTa05TemxhN1VUT3Q2YVNtWmlpUXUyTFlNdE5pVDRRbTc2QzhzVjk3elFCM2VVVTItM29adw?oc=5",
+    "source": "Yemen Online",
+    "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T01:36:00Z",
+    "title": "Iran Strike Wounds Two In Bahrain, Saudi Condemns \u2018Criminal\u2019 Attacks - TVC News",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQbE8yeWVJR0hjM1hhdW8yLVY3VE8zTFZaUXdGSjBselctQlJEenFRYUFBZlZjMXRVU2ZGOUR1VjBiQ3J2M3JiZ3plbGRQa2ZEU3ZObmJFREg5Rko3eDVnZlRCWDNQU2pmcFpNSndtbzBfS1JhYU5xRHhKUVFMOUVFMlktR2NETXVuSzVWSDJZeDN4OUE?oc=5",
+    "source": "TVC News",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-23T00:23:31Z",
+    "title": "Yemen's Houthis attack Saudi Arabia's Rabigh oil refinery - The New Arab",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVmFVLTlvczdRWVpRQ1hIOWhIblUza3c5Q2lDX3Ewdk95Y0JkOF83aldZU0VXMEJ4bTNHcUlrUkpGZFFyVXVVQXpFckpOd1BkOVJKa2oxWEZsb0piLUJuTk5KdGxxc2M2Uy1ocUc2clpCWE1SMndkaTUtQ0hkUGRjdkNTRmRoeXhnRXlNNdIBkgFBVV95cUxNc2NJRnFIZWVnZWRlcFl4eXd4aUZCaWxCYWIyVExRcU5KVklLMWtoTmZoYWxJT2szN2VhRmw2VWl3bFk4eU9iM0NzcHpic3BNSlA3ZUw5bFk5WnZwdktrSEtxQnRuR1U0Q0FNV1Q3akxOZ0dfeDM0aUt3cHBvQXh4RV9HMlNXR0NuNHZONDUyLU9Qdw?oc=5",
+    "source": "The New Arab",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T23:58:37Z",
+    "title": "'The weight of past defeats deters Saudi Arabia's allies from intervening in Yemen' - Le Monde.fr",
+    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOWFdfLVZTaGpXRzJaNUEtb3ZlWEdmN3psRl9odTB2Y2xWZGpNcmw5V3VxdTdTRW9KaDhGbFBCUlF1dEJESmcwZUtEVVl5NmMwMlZ4S0RNaV9iVGYwVFhaZG14eDVMcWVrdlhZZWp6dW93TnlRejNackp5YzktekRZcjR2bXZMUWFub2xQUjVJX2NWVHB6aWdORHNVYVhlZWg5aUdzMUlEbkNEWlNOZ3lKckxjWmFzWVFlYkZ2VFNOcFZrVnFPcDdQMlU5U3VBSEE4X2JhamNucU4tMnE4REVOMlZlT0g1Qzdlb29V?oc=5",
+    "source": "Le Monde.fr",
+    "tag": "posture",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T23:26:00Z",
+    "title": "CENTCOM chief concludes visit to Middle East - Breakingthenews.net",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcTZtdVg4c2FFakxZNUtQVGc3UlJFdml3OEF0aEVQMEN6NVNVWm8yeUV5UDN3ZHRubWt3OTRQejVudE1WM1Vva1RVVUdDY2dfT3NSY1ZUWmFuX2d3d2RRUHdYZEtMTElDZnFWc0RWUEh0VG1ZQTMya3kwdGt1bUg2S1ZqekpRbk9FRmxybEl2dk5BdVU?oc=5",
+    "source": "Breakingthenews.net",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T23:23:50Z",
+    "title": "Iran\u2019s Revolutionary Guards Say They Shot Down Another US MQ-1 Drone East of Hormuz: 10 outlets compared - NewsCord",
+    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOdFVvZE1uMnVGZVcxUnlTeVBtam45NjJHVGw3TWsxYldvZVZRcGc4YnB5bm5NRF9Qb2NNTkNZd0xIY1RDRTJOZkVzOFBUWG5BaHdjY2NMSEhHN2wyOVhRbjlkREhXY2VoN2xOUkRDaFYtVmxYbjNGRFU2VTduQkR2S0xtdWhpQUFjZ0pnY1BsNXE0WGE1OTAycWZPWHBYOXlDMWJsekp3UGpMTUg0WDVhR1huMTZwMDFHT3JRRHR6V1pwN2lFSWZoVlZpYjFiN2JLZkNmemFQRUlDMlA3Z2VWNFRLTEo5azVEWXc?oc=5",
+    "source": "NewsCord",
+    "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T23:18:41Z",
+    "title": "US naval blockade of Iran: Tanker incident reported near Strait of Hormuz - Beinsure",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNY3dvQTY1cnRrWV9zbHJMQk0xM1NRc2daTm1JbEt4MUJud3ltYmxGV0IwOUxFTXhmbHR5RzJrSi1CZlJzSHFacW10Slc3NXFPSWJBNVRBUnNPNmxyaWZteGp2SnRZWmJvVi1ZRGpxT05WVXp2M2JfdlNUWHJuRUctZlQ5cnhCSkFuaDI2RmFDVnZLYzJKVXdzaUJjdU53VkVM?oc=5",
+    "source": "Beinsure",
+    "tag": "naval",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T23:12:51Z",
+    "title": "Saudi-led coalition says intercepted Houthi missile in western region - Free Malaysia Today",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNHl4WVhnOGFZS1BPanhkb3A5VkpmN3FITzZIUldmOWQxNHRpOERXUTBWSE5NTTNab3JHdkxDR0xkMkk0M3otN0FiQ3UwOTZId19IakFTZGY3XzNFek1hclgwUkFFeUdxbnhKT2oyZXI0ODVreWNSM1VGUXc3QktyN2hqcVJKeFNIdUNudkx4NDN4Z0ROZzBGbXlKNVB6Qi1sRHVLa3RXZW0tRDMySU1sTzVhVGg5MXM2akVqYU93ZnN0Y2UtMlVheA?oc=5",
+    "source": "Free Malaysia Today",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T23:06:13Z",
+    "title": "Trump Warns of Early-2027 Military Strike on Iran if Talks Fail - bloomingbit",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE94b0tDYVRLNXRfbFRlb3diNnRUNzUxOG0yN0FWZy11Q2lOd3VIUjJxeE13VUl3bXJrN0N3cm9zZHBickx2SGx0cmtLZmIyX0p0RUhiUQ?oc=5",
+    "source": "bloomingbit",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T22:50:00Z",
+    "title": "Man swims in Strait of Hormuz to show war's wildlife impact - Modern Ghana",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1yYlpCMHNKbnA2YWM0S1BUQXhmU0g4VU1zdDVkZEF1SklKNWpabmpzWmFOY0ttRktNMHM0N2xfMk53QWFMZlppQnpfMmhPazhjd19JMjBfbXlkdnpIMllR0gFcQVVfeXFMTVlhSkppTW4tbjlIOWlwMzlWamlnTzFoTm9EWXZ0czhER0F3bmxzcENUSjJtOExHbF80eTNPQUY2VDVrQ0V3aGhrNk4yX0lTLWE4THZDakQxYTNwbEQ?oc=5",
+    "source": "Modern Ghana",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
     "date": "2026-11-22T22:40:00Z",
     "title": "US Iran War Live Updates: Yemen's Houthis claim attack on Saudi Arabia's Rabigh oil refinery - The Times of India",
     "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNYWFrYTJac1RJdHBWWFhXdndMcC01WFRCVXZaX1BzbFF6NmxIRHBPbHJ2RjBsaTNtZmZoVEJqYnZnQm4xMEFJMW5sOW9BbHFMWGJ4SFcyWjBSVk9vWFVzTTItR0hfaTBReXBIa0ZiaW55ZWZVOE1JVXhFT25XTlF6eEJnY3UzZjNBcFFaU1pYRW1yTDFoQkZSc2RZRWZ4OHhwdjlhcThuQlZnUm9NU0Vmd094SGItQ1hGYmwyWlRwdmVLdkI5VmtmZ2lVVDVGcWFLM3VaTGtxMGltNkhXMFN6UGVIZDlwS3JHUG82TGVNcjJGZlJZTWZ3MDdXREhIVF84OFY1OHdyX3ZQTE1uTnfSAZMCQVVfeXFMTW9sTXVlZlBvQ21RLUFhOHRjU0NJejZHWVFPYVBkMVRyS0gybUdBc1JxMmpRb1pKcWNWdUJHUGNOUUVJZkJQWW9KTXNjQXFRREJYdFc0ckptOXFVOEptTmJnT1cybFotQkp1NDBRQWRsaHdMSkJrbEN1clZIcVIzR1FUOTE2ekYxaTNLYl8tbDgxbHRyT01UM1ZRSFR4bmdlZ3ZSeHNGUlpIbUt2SjFDV3pMSnVKaG1iSzllZFRlN1pWUWx3UEg5djlEci04SkdwU3JMVmw2dVktTnBPeUlrbmNJQUJjaUZsT2s3Z3FBNDFmWDg5VDhsUmlrY3NxazZGanVjbkg5MTFTc1U0aFRaSDVkUjQ?oc=5",
@@ -33,6 +341,17 @@
     "credibility": 3
   },
   {
+    "date": "2026-11-22T22:21:47Z",
+    "title": "Houthi missiles target Saudi Arabia, Iran drones strike Bahrain - The New Arab",
+    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNLXBWZVlsXzJrX3ZjM0pySnpxaElWZVFCeWhyWUhuTkRrVlNFaUk0ZkJDZm52WE9HOEU5V212VTE5amJZYXdvWFVNUjA1V1JjM0lPeFItck1SZ2RNYjR2MUhIV3pkY3E4R1N5OXI3S1F4Rk5aamlLM1B6NzhvbjdmaHVURk9mWnduS0xVbC1Kd0R2RGRiYnfSAZsBQVVfeXFMTmF2SzZUTkxPS3hIOHdlWmlsdzFELURIdFpaR1pNSmZCLTM5bUR1Mzd5WEgwV3pmQXBidXEtOE5LQ2ZURm0xZEF0dWdKTlBFeFRSeUVYWnhWaEhZWGFfLTd3S2ZsTDM1RkN6U1VtWmhITUdFRElSYlRpUzlDXy1pSGFOUHdNUmpNWVc2VVk4dDFnSWJaVmdmbGxPbUE?oc=5",
+    "source": "The New Arab",
+    "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
     "date": "2026-11-22T21:59:51Z",
     "title": "Iran Claims US F-16 Forced To Abort Mission, CENTCOM Denies; Is America's Stealth Edge Fading? - The Times of India",
     "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOZGR6UmJFcTU2ZjZValZFRGFOVEFqclFVTHQtaXRxcGRJOEIwalhhZktmR2dlcXBOYmd2WmpkazZVVFlKN2Y4T0VvbzNWTURueGhEd1ZOTkVaY2tzWkt1RXlrcUp4S3U4b045a3VIekN1WmtfcG1oODRITXBFRzRsbVFTWmtJMk1fZ3FhR2Fha1E5c0QyYTZQd2RsUExZaGt5bjhIZFdiblp6RFJTLTV2ZG9MVjZhTHBjcnVidEpVVWs1S29KUmJlekVRRXUzX3cyOFlucnBrYlNzcV84cVZNSjZWa2RDSm13enFzdVFQeThPZ2I4bjMxcllGNExYZlFt0gGGAkFVX3lxTE1KeHI4aG13RzBRUllVZFk5LWVqOFkyRk02N05kWlhuVGFSeFVBRTNMWXVJOTUtYnJIYjFQRWpFZnlqTzlJTmlEejlWZXFmMDhiQ2xfVzlMcnQ4MzE2c2ZsRWJuc2c3Q0tfNmNXcm1XVjd3d05xamw5U1BYVnhEWEI1VWd3eWRFWWVpQ0doT3hrTEFIUHZRcDJ3ZXMyOTlmWmxQRHBqZDZEMXRqcVRsSkdQckZHei1OcExRX3Y4bUlvX3l4bGpMVGRSU1N6Qm50U2ZrVmJzenJtb2EtaEVUb3U1TC1oTzI5QTJ5eDVqb3Y4cWZNeVloVXRxZkR0VWFTaVBFRm9OZXc?oc=5",
@@ -60,6 +379,17 @@
     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOYTFIUVh4N2JiX0Z3VnJON2xCamRTYWRzMkNQVUtMSU4zTGwzaG4xX296NnNzY0hGVDVLeFVoRWJKbWdITmVFeTNQeGgwOS1NOFc5aXVaQnpXRmRUWGVzMkUzcVdyMXhvZldvQTBfcFkzMV91bFdhUGxqM3RqdjB5LXczSlZ1Sk1LYV9hSi1pcEFCOXpYWllwZ0NNcUZjZlo2ekxEbGZSdm5RNUJfb3JOel9Cd1RTaDFfZWtvM1V1ZHN3MU1U?oc=5",
     "source": "ASHARQ AL-AWSAT English",
     "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T21:41:18Z",
+    "title": "Coalition intercepts Houthi drone targeting Riyadh region - \u30a2\u30e9\u30d6\u30cb\u30e5\u30fc\u30b9",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNME5FLXlsVHRMMkJrajF4Vk1oQWh4X2JQWDBHaGloOW92N2JnRDYxSFY3Z0tTbVJKRDZkeFF2aXJnaFZyT1JJVWUzSG14X2xaLXJGRWEwdGVlcWwxYXBfWERyZnNIZ0Y1U3Z5TzNzQ0lURXowQ05Pa21ZcGQzcVZocm5jOXRMeEtCOGFMNm5aYVNOd1lGeUxZR3Q1TGdhaVEzcFVJaTg2UHk?oc=5",
+    "source": "\u30a2\u30e9\u30d6\u30cb\u30e5\u30fc\u30b9",
+    "tag": "air",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -165,17 +495,6 @@
     "credibility": 3
   },
   {
-    "date": "2026-11-22T20:21:03Z",
-    "title": "6 Civilians Injured in Houthi Shelling , Sniper Attacks in Yemen's Taiz - Yemen Online",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OTDVfVXVHeUJkVFBUZGVDX1RjTnRubmpvQmJkVjlCT0FDZDdPQl9tSzMxd3ZYOHpldE8zMFFmcTUyVmRZNjhsVkxoaDJlTjFCdl9EekxfLTFqQQ?oc=5",
-    "source": "Yemen Online",
-    "tag": "other",
-    "cocom": "centcom",
-    "grade": "C3",
-    "reliability": "C",
-    "credibility": 3
-  },
-  {
     "date": "2026-11-22T20:16:30Z",
     "title": "The Houthis announce targeting the Rabigh oil refinery on the Red Sea coast in western Saudi Arabia - \u0635\u0648\u062a \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a",
     "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxObHZBUy1BZjRDd3VpUEZ0TVUtZDF3NkZhY01Tb0U2V01qZjZxaktfblUzVkEtTXpXRVFPNG1xTnU4T2paNDJ3UWFGZGljNmNSOEZPdk5wUnhyVVZXOE5Vd0pfVl91c2puX0V3VFlQWXhBdjhjbGNqSE9qc3NGLUlsNXFYcTVxWGRKbWktNkJubWVGSlhQU0hoMzJLNnJNZTRqa2dqRTZ0azk5bjcwMWFRQlNHRDJzM3A0Q1RnVjU3cFJZWXhiUUNoQ0M1MUJHdk9MbnMycnJpbWpuZjJfUUM5U1JlRWF6QQ?oc=5",
@@ -268,6 +587,17 @@
     "title": "Netanyahu presses Trump for Iran strike, but White House expects at least weeklong delay - Ynetnews",
     "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5xMFpCTG9hTU9sLUxXV1plQ2lZeTFHTktJQUxtbTZiRHNyMm9fczBnUXRkSWhLNVhuVUo2RXpkRWFtclFpUmVKZGVnYzFGbld1a1loNTNMMA?oc=5",
     "source": "Ynetnews",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T19:19:52Z",
+    "title": "Houthis claim direct hit on Saudi Arabia's Rabigh oil refinery amid renewed fighting in Yemen - Firstpost",
+    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQYzNKWFNRektEV1RpcDN6aUE0cy1paVQ2WHdBc2V2cnNuWDhnSHZaSFZPVTJRQkR5WWNZRk0xa1p4ek80UDBzeVhGOXgxSjAwb0R0THpkbkZWQXZVS3dtVV9OMzN2dmh5YVFqak9FVDRPZ1gtV1lGV1lXS0M3dEpMeExMaFZTQkNSeER1RTVGNkJSY1lzMnFlVlJveElhdVhrNVk2MndVQ3NFTUxXbkdNdzZmOU1qdEZsMmtRMm0tcGpHV0h0WnJYNWNOaWtTZElUQzVyN9IB2gFBVV95cUxOckdTaUQwSGY1REt6LVBnZzR6YXp2RTNLTXk5akN6SlFrcXQtSkswcEh4clYxc3hvNkVqTTdXMGVpZzJhS3lUemFLd1JWb0ExZ2wxcEZFRmI4Q2pNaHprYkU3NTBKR21IM3IwQmZFMFZLV3RoT0trRHBlVVRFYjFyQUZOVEpKc2pkMmFUV2NPRXBidlV4UW9uZ29kT1doWXpiNW1SMkNYM1RPbXYyWG83dDMxRTRhNC1QMVRwbk5PZ1ZHMVZJUkVLUTlyTVE0T296a05wRkNZU0NtZw?oc=5",
+    "source": "Firstpost",
     "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
@@ -407,6 +737,17 @@
     "credibility": 3
   },
   {
+    "date": "2026-11-22T17:47:09Z",
+    "title": "Lewis Pugh Completes 15km Strait of Hormuz Swim Highlighting Iran War\u2019s Wildlife Impact: 14 outlets compared - NewsCord",
+    "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQajJZdTJIeTdIZHNpdVdmRzdvV3VXZkVEczZKamhxS01uMWtTWmNadE1zU2JlejVrOFFaTUJId1B3WUE4OW5aMk4tUkxGQXJZaWxsdzJCSHZBUjE2ZUJITTdSMFlRbk85bGhSNTh4VjkwV0dHazhhSmFuYUNMeXhUbWZab0owVmxjR0kySmlCSDRkaVZvWThubzJCdUNCVGJ6TU4ySmd1QXh2WTlFdUR2RGZhWmIzakVxV2E3MDhmT2dFTlFCM1BCWURPYURHcjczNjJJTnh4U0M1dC15b1NOVQ?oc=5",
+    "source": "NewsCord",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
     "date": "2026-11-22T17:46:29Z",
     "title": "Video | Strait Of Hormuz | Lewis Pugh Swims War-Torn Strait Of Hormuz - NDTV",
     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPX0RTU3NQV0lkdXRlUUlYN0w4bG1mN2t0LXJPbDhfdjdfM2FIY0tVcjkzY2NwVGRvdG1SMmdTdGdRT2RfcmNUTmtaRjRrdjBEWVYtTmFBQThhMWswMW5TWmZFc1RJWDVEWEdpWWJDT09lUV90SUhPdXVYMkd3LXA4Rl9IZw?oc=5",
@@ -423,17 +764,6 @@
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWjVqSUViWUZfZTQtTllSakFZdlBNSWE2dk8wZUZqV0ZGVEc3c2R2dnM5Qko0S1ZnVnl6S1R6aFlyai1UWXB5dFktLVBhazdNRk1BWlpscDBjRTY4ZTBhQUNfNW5kWmFrRnFaVEQweW9ERTdmYlZtOVdnbUI5azRaUzRIRGNWZXNvN2xuZWRSdkIxYkVpRlRIRGVNcWVwLXdnUi01NWk2dGRfWFU2MHJpQVdjR0hWd2J2LXfSAb8BQVVfeXFMT0ZLNm1zaHpWRHRqZUJXT01wN2FmNmlIVEVOLTBZblFZVlc4aU5Ma1Q0dFF4N0pJb2xnRmhITE4zWkZZTk54RHFQMUdGQ1J5QzRkUUFoX1BoX1NTYVM0UWFnRTFmNDFtVzZIMEd5MDF4X25LTnc3MmZZVzV6Y3M5cmNQQWFiWHhfekZlRVVBdkl0eHhURkNMRk9XMVhWNGhLNzdMQk04Z0llWDN0SzgyVlRmQUd0VjZKUXNmVDlMdms?oc=5",
     "source": "Middle East Monitor",
     "tag": "air",
-    "cocom": "centcom",
-    "grade": "C3",
-    "reliability": "C",
-    "credibility": 3
-  },
-  {
-    "date": "2026-11-22T17:38:09Z",
-    "title": "Lewis Pugh Completes 15km Strait of Hormuz Swim Highlighting Iran War\u2019s Wildlife Impact: 14 outlets compared - NewsCord",
-    "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQajJZdTJIeTdIZHNpdVdmRzdvV3VXZkVEczZKamhxS01uMWtTWmNadE1zU2JlejVrOFFaTUJId1B3WUE4OW5aMk4tUkxGQXJZaWxsdzJCSHZBUjE2ZUJITTdSMFlRbk85bGhSNTh4VjkwV0dHazhhSmFuYUNMeXhUbWZab0owVmxjR0kySmlCSDRkaVZvWThubzJCdUNCVGJ6TU4ySmd1QXh2WTlFdUR2RGZhWmIzakVxV2E3MDhmT2dFTlFCM1BCWURPYURHcjczNjJJTnh4U0M1dC15b1NOVQ?oc=5",
-    "source": "NewsCord",
-    "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -533,6 +863,17 @@
     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOclgxUGFKdUFLOVFTdF9zb1NfUXl4THFmdXp4dUdPTl9TMmJ0ZF9ZOEFLaktjamRJcWhWenVaUVUzdWZKb3htMVNPZlFQbjVKdTFRQndpeVJSaXF1RnFkNU9SRUFBV1JKczRvUFhMN1duc292MXFEdkJkS3lPT3hud1hEZGFraXZxRVFmc2NIYmhkVlczOFV5SFIzSkg5WXlsT2JvUkZnNXU3bjlrRFg0Xw?oc=5",
     "source": "\u0648\u0643\u0627\u0644\u0629 \u0627\u0644\u0627\u0646\u0628\u0627\u0621 \u0627\u0644\u0627\u0631\u062f\u0646\u064a\u0629",
     "tag": "naval",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T15:47:00Z",
+    "title": "Iranian attacks in the Strait of Hormuz reach highest levels since the conflict began - KOMU 8",
+    "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxORGtPWmxKTElPRDA5aDRCcWttd2NxY2MxNXdLaVRqZTRUR0tLQ3lsNDVFVy1MQk9GU1NhMmIzcm9OU2RIbGxlcGRMa1JDcm5Sa0kzTEhxeUNVWG1fekI4OEVQZW4zc3BEcnBmMmJmVXA3YllNTVNsNmZWSGg5bThfMlpCNlM1NWdvWjBaSXdSV1NPOGp1NDhyTzJkVE0xSXVCcHNORVNIWGZXdVRPNW1CX1ZMZUp5WlBkUVE2RDJMblRWV1NEbXJiUWt0d1hWZkF5Z21wZC1Wb0VwTEx2d2Q1NHg2cHcxM3dRRTRzZzFVOG81RHZQVkN6TEI1YWd2LV9jQjdF?oc=5",
+    "source": "KOMU 8",
+    "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -759,17 +1100,6 @@
     "credibility": 3
   },
   {
-    "date": "2026-11-22T12:45:12Z",
-    "title": "Coalition intercepts Houthi drone targeting Riyadh region - \u30a2\u30e9\u30d6\u30cb\u30e5\u30fc\u30b9",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNME5FLXlsVHRMMkJrajF4Vk1oQWh4X2JQWDBHaGloOW92N2JnRDYxSFY3Z0tTbVJKRDZkeFF2aXJnaFZyT1JJVWUzSG14X2xaLXJGRWEwdGVlcWwxYXBfWERyZnNIZ0Y1U3Z5TzNzQ0lURXowQ05Pa21ZcGQzcVZocm5jOXRMeEtCOGFMNm5aYVNOd1lGeUxZR3Q1TGdhaVEzcFVJaTg2UHk?oc=5",
-    "source": "\u30a2\u30e9\u30d6\u30cb\u30e5\u30fc\u30b9",
-    "tag": "air",
-    "cocom": "centcom",
-    "grade": "C3",
-    "reliability": "C",
-    "credibility": 3
-  },
-  {
     "date": "2026-11-22T12:35:49Z",
     "title": "Iran says US drone taken down near Strait of Hormuz - Report.az",
     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOc3NhSF8zVmoyMzFBRkVJeTJxMFZ5ZllERFRkbVlPZWJwQmFVaFlKLWl3TWhoUEdvMU1nblBjMXRhVDRVdzJKMlZ4OVRfR0ludEowYzZQWTlrd1hWUE5CQjhoSGIxSGVEeWNVTnJUbGxRZHJ5WmJielgwalpEbE9XQ3JIbGx0UQ?oc=5",
@@ -807,6 +1137,17 @@
     "title": "Saudi Arabia\u2026 The Houthis' Last War - ASHARQ AL-AWSAT English",
     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNYWZNMGF0ZC1NMkcxYjhFTnBNbWh6Tks1bTBsVVN4Qm9Kcy1YSHNjNnBTUE1MelZjUEZLSkN4SUZjZE9QY256VE41OGRXbjQ2bUstRWdqUm9XVlRpWTZjWVJxUTc4ZzM4UU1rZUVfVWdmVzRxLU5OdHI3VHRrVWxudnpKdWI3TXJ6?oc=5",
     "source": "ASHARQ AL-AWSAT English",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T11:49:57Z",
+    "title": "Bahrain Files UN Letter, Saudi Arabia Warns Iran After Nov 21 Strike - https://houseofsaud.com/",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5iVXFub0p1VXMxNHNrc25kbU9RcmxTckplUlFVeEdtaFZkYmQxQXNhMXBDM1NLMnBWZUVJUmYxaHlrNjJEbU5WUUNlelFaUTFHbkNQU1NzeHVOb0F3VWVTRzBTT0xUd0lG?oc=5",
+    "source": "https://houseofsaud.com/",
     "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
@@ -870,10 +1211,10 @@
   },
   {
     "date": "2026-11-22T11:16:56Z",
-    "title": "Iran war live: US \u2018defeated\u2019 and cannot dictate peace deal terms \u2013 Tehran - Al Jazeera",
+    "title": "Iran war updates: Navy says tankers ablaze near Hormuz after hitting mines - Al Jazeera",
     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONUdmdEJGUnZfMzVyUjZSNGF6VjBWNkd3d1NWM1d2SEZUNTV6aVRjLVR4X1pKbmtMRHp2R1NjQ1JzOGRTVVdBQ2ZHcmJ5bHZvczR6OC1wV3luZEFpSVlJZ2FUcERvaGQzRUswb1lkRFpMcFlzTW85MmVvQkxhNldua3dKWmZBcXk2Nk15QkZPWENhNzNDUjNBMkEtcUxXZVNZWWRwMlE2T3JyZE12ZmowcXgxZ1JKeGhfcVBGdEtBUlI5Z9IBxwFBVV95cUxOTTdmYm1DcmxqeU9HQ1I4UWZnNzAyeFpZdWU4ejZEbFJNcHhWcXpRS2gwVW1oU1lGaDBCVzE1ZUV2M0pHY2ppY2ktVTF5MzI3WG9PVDZDR05XTUY3MURoZFQwenRZTm1wZ2ZScHZFNmh1NUJUWVVoeDltbGtoWkdQSDB4RjVFRHItWDJEOW1HM3dsZnFpdVZsR3NvVW1WMVNUWExtYVEycEtianlfTWItLU9KSF96R3pCSXhhNmgzbjRSMHZhcVJZ?oc=5",
     "source": "Al Jazeera",
-    "tag": "other",
+    "tag": "naval",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -1562,11 +1903,33 @@
     "credibility": 3
   },
   {
+    "date": "2026-11-22T02:47:18Z",
+    "title": "\u2018We\u2019ve got to stop the war\u2019: Endurance athlete swims in Strait of Hormuz - ABC News & Headlines \u2013 Australian Broadcasting Corporation",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQ1JzcjVOdlZuMjNES21VNHh0cmV5V2ZGWUtoaHZQck8xYnBmaGstLU5aUEJ6WEdRM1Q1MHA2cFhMdFh1dnNaYTJBVkczTU5rVHY5emFUVXFrZ2RNUUhyZkJIV2dqOS00MFIybENGdFFSSmhFbkFFZ0l3YUNBWTY1Y2t2VnBVQW93Ujdfai1pVVExNFV5OWUyYlZVX2dtOVpKSmZGeGVDakxRd3Ryc0NyUmN3?oc=5",
+    "source": "ABC News & Headlines \u2013 Australian Broadcasting Corporation",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
     "date": "2026-11-22T02:38:19Z",
     "title": "Iran claimed to have hit an American F-16 over the Persian Gulf, but the US denies everything - \u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0456 \u041d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0456 \u041d\u043e\u0432\u0438\u043d\u0438 (\u0423\u041d\u041d)",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQdFprV3NpbExTb3lsQUhydFFCazN3ZGJWSkt6THh3SzlQLURaMF96UnRtZ3NSS1l5ZHJRcEFHRDEyWUxJaVFMd2paT2w2TDJscnJBSnoxR3hoSnVEWmJjZ1VyQ0VNck5zeEJUM21mNW9fZEdJazl0a21fTjZtTUY5Yi1iMUtFY0hub1FPWGc2ODM3empBblJ1d2ZUMkt5aUx0c25ZWnAtYk45UGZBZ3l6M2I2cklBQdIBtAFBVV95cUxPYUpEVEF3UTdqbkJJTmoyWV9qRWUxSWkwVkVBM3A1OWlNdE9FNFVwSWRjWGFFZlVwWGduLTlnTnU1YnZ1UGlhV3RPN3lOYlh5VEt3dW1SUUxtSFRTQW5YZHRMdDFVV0JlN25lQjVuUHhoMmRzQU1WNjZaS3FUT0VsQlV0aTJJbzM0ZnRqRVdnY1RLc0o4VWszbE93WHlaVXhmTWpBd0tvNDRFTF80YVhLcXpMWV8?oc=5",
     "source": "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0456 \u041d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0456 \u041d\u043e\u0432\u0438\u043d\u0438 (\u0423\u041d\u041d)",
     "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-22T02:27:32Z",
+    "title": "Saudi coalition hits Hodeidah port as Houthis threaten Saudi airspace - Marine News Magazine",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWDVNMWRkTW8xU2g3eXZibm9mM0lOT2NBUm5zUmRsdS1YOEJHX3VHbUwtcEVmbk45Z1k1WHpRZnlMTlFOR1MyLTZLMEk0bGNGdXlIUzdZTzloNzA2VzF1M25CX0VtWU53eTZFZDVyeE1zMUZzYjRsNnlwN3dQWTA0ZnI0aWQyZDdKRUxyWlh3ellHYkJ1OXBhMnNsaEdjdmZ6elFpaThHLV8?oc=5",
+    "source": "Marine News Magazine",
+    "tag": "ground",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -2310,17 +2673,6 @@
     "credibility": 3
   },
   {
-    "date": "2026-11-21T16:32:53Z",
-    "title": "Saudi-led coalition intercepts three Houthi missiles headed for Riyadh - Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ3ZhbEhHbVN4RWdTZWVLWGlFQnl1UlkySGFjTEd3NEJHaHBDeXZuclpCc1ZLNy1Fa0oxSlVJQlRLVmhCV1hkdFpPUVZ6Y2JXcDlhMDExaGpIOHM1RUhHVmlOMmV2SXVydFU3UWtvdVUxalkxUHRNdXg2Q2JZVG1WN3otT1lKaU4yVGwyUUJVVnJ4QkREb0tnVGZCdG5TQTFyUk1SSWZHMEhrclVTeVlUenVR0gG3AUFVX3lxTFBVWGExdVo0WFJQdkYxTTRNRVpBaFdBSzdObGNjOWZQVDJtTVZyNW9yQUEwbGtHU092TW1BY0FSY3dBc25wZVp2QjFIZnRLOE9RMFhLMWpjY0R1TVhUUWhubENJaE44Z1JMdDBXQWJqMDlGNVhzT2pHWEpONXhZUFcwWWE0bUtRb2xZV1VkUXZVS00xVmcwa0x1eWx5dHpES2FwcUQwV043NExycnNQb0ltbWw2QlF6OA?oc=5",
-    "source": "Al Jazeera",
-    "tag": "other",
-    "cocom": "centcom",
-    "grade": "C3",
-    "reliability": "C",
-    "credibility": 3
-  },
-  {
     "date": "2026-11-21T16:30:45Z",
     "title": "'All Fighter Jets Safe': US Central Command Denies Iran\u2019s Claim That It Hit An F-16 Over Persian Gulf - Outlook India",
     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOY1AtT2pDQXVrMDZPS0JybVhzZzlOT1lsQTd0ZUNKOWZTcHZHSkdYLU1hZ295YVRTRG9PT2JQUmxibExqYkgtc2xkNm9qNFlXQXFhU2xtcnFZX1owdnN3VVc0empiYjduMVhOeDZHcExoRmFMcUgwWnpYTWlEbHlBRExFU0FxNmRISjF1MmlRWVJXcVBhc2tJM0E0VlhtdXdRcHhEbjBCRnNLeHpha0FDTUFrWnNsWnVGYjBIVGRjeE7SAc4BQVVfeXFMUGRDRlFWNzFqWjdwVWdjc3J1MTY1V05DYlpTNnRobnpTRUVLNWhKUG9mNG1lSW1JbkJvNHhNSWJWWVdvXy1HeVV6UXVhOEJPN0dnMXhJbnhHLTNLZ0NGSE94clNVWmtsLWQ0N3QyeFdNNldQbTdhR0E4dUtlZDhDVHllbWIzSUd6OExPX2lLbUpqZ1RiZEltYVYxcThvSmhuN2pMN3JULXhnQ1FaTGlHcUFvemEweWFRUlIzbGt4LWRRMG9CM2JSS01oa3ZGdlE?oc=5",
@@ -2557,6 +2909,17 @@
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNlI2QXdYTVMwaWNZVENQM0VRN2NLU0VwZjRDam85ZXM1aE1lTnp4VldRS3RyVzVaMzg2TWRJOHU5blRUSVZuazh3QkhuamF0b1MyN2liSm5hc1dfa1Zja21yck9xWFlFQllTYm1KZjctbTFUaGEzMlJRa242X3RFOHltYUxqS1pkOGY5VTNjY2xXaFZCb1dieUNqeEx1RHlGcEo0TnZmcjBrUQ?oc=5",
     "source": "Saudi Gazette",
     "tag": "naval",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-21T14:43:50Z",
+    "title": "Iran strikes 3 tankers as it shows off missile launchers, and other Mideast news - Washington Times",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbzZ0bU1EZV92bnN0eFcyQ2tyQ1hqenNtWE5pbU83UkNCNXNoN2gzVG9tQVp4NGQtdjNDYm4xU3JLSkVzckp1VEhVTlViaXlsSkxhMWFheEVqRmVhVXV1WkFkeWlBSU5ZV042cUVBMERES0h4ZVNZdXBVUS1fYTM4RDJHN1ZDaHExV3lBOURsdlcxUE5TQy03U3V0V3U?oc=5",
+    "source": "Washington Times",
+    "tag": "air",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -2893,11 +3256,11 @@
     "credibility": 3
   },
   {
-    "date": "2026-11-21T12:07:35Z",
-    "title": "Yemen\u2019s Houthis fire 3 missiles at Riyadh after Saudi coalition\u2019s \u2018special operation\u2019 - The Times of Israel",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYzIycENDaTJ4dGx4bVhmZXVfM0pQNk9PMGtpNW5KX0h6eXl4NlFMQkx3UEI2czFLSVdtNTdEUWp5cFZmOFdFMmhmSnF4anRzSHREQzFyc0QyOVQ0NENJenR0eDRuMHZpaHRwMnVjMml1VHpNNE94R0VhWHRtdUJoRC14RXZyVjZrcFNwVFMzdUxWd1VZek9lNW43WEJzcHVwTnpzc2RDa1JVVzNVZjZhcnZB0gG3AUFVX3lxTFBZb0xtTXpQeFU4V0hKbUZ1WXpkQy1MRlJDcnNRQzZRakZGV2lOWmNrWUJwRmpudnZ5TF9VZ1lHek4zRWRDQTZjSDg5NlZZeEdUVTg4T3ZvQklBM29yUTlrc1JVSER5WnFGdl9IS0ZISXN5dkUtQTZuVGtYbHgwY3hfSUItMU80TTNRcDBKX3NEd01xTUI1WUNaY092X3k2RFFXMzlXTmFCQ3lETjlHeUh0U1VMRUdBZw?oc=5",
-    "source": "The Times of Israel",
-    "tag": "other",
+    "date": "2026-11-21T12:07:45Z",
+    "title": "Two tankers struck in Strait of Hormuz, says maritime agency - Malay Mail",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPYjlrX2xmVVFKQmx4OXFXeWxfajhxNWpsMFJrZWxhQkdBWU8zNFZqTFYwYjg0dEdCWlNpdTFfeFYzemY3ck1yZXdpREczSzVzejVwRlpHYm9QXzBzUE9FRHdrOTYxRXo5R0hOMHZhWHpkOWE1clJwNVpiTzNGRGRWazNuVW1FQ05VVlVsazJDMy05LWtic3Q2SnFraFl5azFRVUZBMnNBUnBmT0ZJUm1YNGxsNFjSAboBQVVfeXFMTzBxWDRRemgyQk5MbFFNWlBmelo1eENTenplSFlYRl94RGpRZVhCa3pHLU5tMk5yRFljeEMzOHl1UGNITUZCb3RIaEtwZFh0Z3hUN0dOWTlIS2FEa1phY3pTRFJsQ1RLUHN1UDd3Zlh2Q19wOXJMNVY4MU8xUzJmRzJCU3RwbHpVeHZYd3ZFNHhWd1E1eEkxYUd0cGtaVlB0aG9vSFJsUDBIMkhfVkpxTUxZc3EyMEhDSDJR?oc=5",
+    "source": "Malay Mail",
+    "tag": "naval",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -3030,6 +3393,17 @@
     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQTDBVdTlGZUhHQUtDc2g2NGRZSTdsTFhTSll1X1lzT09DcTA4WmVlUVNYQzNqZ3VobUZFSE1UYkVYbGVFMzg3UnJwVXVGZzR4aWFoYnVZU1RoaDZ1azlNTjhaWGd4MGlGTmlCVXF3YWFxcUNmemVXc0FDSWJ6M3JBWl9UYl9BQnU1NDFCM1NzTHphV003ZjFRd2VWTzJtWjREa1hqbk94Sjk0SlpLbVdfa3J2WkRVUHRQSnE5c0ZxM2F1bjJXdXRSblNaOHUyRDdCQkstVFNn0gHbAUFVX3lxTE4wT1ZwVTJvSmpuNE9aSlBMUUR6MHlRUThObDBCMHlTR0VmTllyM1E3akFQYThYclZvN1Znc3dOUzlubWNyNmFuOFpMVUhVWm9XdEVjSGdtemZxSnZXb3dBQ3VnSlE5bVlWZkEzQVBSOURlZ29MYWxvMlZ5Q2dsY2FtVmdMRW9kTVZBTE9BYWZEWlk4YWp6M0RaWDVfdXlBX1hUWG80WjcyOTJwZjJGaXpxZlMwMzlYb3lUMWJyREhaOUFMRExxYmQ5dXAwc1NLLXFEdV9scE1sdVVSWQ?oc=5",
     "source": "\u062a\u0633\u0646\u06cc\u0645",
     "tag": "air",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-21T11:29:00Z",
+    "title": "Yemen\u2019s Houthis fire 3 missiles at Riyadh after Saudi coalition\u2019s \u2018special operation\u2019 - The Times of Israel",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYzIycENDaTJ4dGx4bVhmZXVfM0pQNk9PMGtpNW5KX0h6eXl4NlFMQkx3UEI2czFLSVdtNTdEUWp5cFZmOFdFMmhmSnF4anRzSHREQzFyc0QyOVQ0NENJenR0eDRuMHZpaHRwMnVjMml1VHpNNE94R0VhWHRtdUJoRC14RXZyVjZrcFNwVFMzdUxWd1VZek9lNW43WEJzcHVwTnpzc2RDa1JVVzNVZjZhcnZB0gG3AUFVX3lxTFBZb0xtTXpQeFU4V0hKbUZ1WXpkQy1MRlJDcnNRQzZRakZGV2lOWmNrWUJwRmpudnZ5TF9VZ1lHek4zRWRDQTZjSDg5NlZZeEdUVTg4T3ZvQklBM29yUTlrc1JVSER5WnFGdl9IS0ZISXN5dkUtQTZuVGtYbHgwY3hfSUItMU80TTNRcDBKX3NEd01xTUI1WUNaY092X3k2RFFXMzlXTmFCQ3lETjlHeUh0U1VMRUdBZw?oc=5",
+    "source": "The Times of Israel",
+    "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
@@ -4455,6 +4829,17 @@
     "credibility": 3
   },
   {
+    "date": "2026-11-20T18:29:31Z",
+    "title": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeERTd2VXX21mYUpEQUFyRjN2dk5Hdkl3RTZLTDUzbV9HRzE5cy1CcThnQkF3WVNsMDR0bWsxZDMxTlI1d0o2dFZwNjEtX0ZKSVBYQmFycVN2dGNYaXVTRnh3a2Y2M09uM0RkQU4wSDdGWEo3TF94ZlVySy1RNTNEaGhjZmlQZFJ4VjNzM094Rmp4Y0RJZHJZZG5MZVB1VHBkUjJxTmUwUlpBc1JFa2NhQkdGTVhOcGc?oc=5",
+    "source": "Reuters",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
     "date": "2026-11-20T18:22:00Z",
     "title": "CENTCOM shows US F-35 fighter jet refueling over Middle East - Iran International",
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBQM3lJR1JqaFdhYThqenM2enhlSF92QWFOejFWQnRGZTAtaHZqbjVZSGI5Nlg0QTRjN05WQUVDQWlHc2FkbjRsUjU3RHZUQ0x2akE?oc=5",
@@ -5038,6 +5423,17 @@
     "credibility": 3
   },
   {
+    "date": "2026-11-20T15:02:55Z",
+    "title": "In Yemen's Aden, divided government forces prepare for a Houthi assault - Yahoo",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUUh4d1BsRjZSZEFjOVZIQXFlVDNMMlVmdS1zSHIwYTJMNzJIZWd4TGlmNld6QjRPVVk5UUJ3NXBZY3lZaWFSYVVyYzN2VG05bS1ZTHl4WC1rNEd6LWlCNEhBS2U1WFFSbGpxUkNSNEtiM0xnUld1RWpwOGpKSkFkZVRudDZhYWM0dGdDT3BZeVN1aGtldUZrSDVn?oc=5",
+    "source": "Yahoo",
+    "tag": "other",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
     "date": "2026-11-20T14:59:57Z",
     "title": "Yemen's Houthi Rebels Warn of Retaliatory Strikes on Civilian Facilities in Saudi Arabia - news.sbs.co.kr",
     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9qV2dPQnhnNmZ2eklPazlVOXliNC16ajA5T3FtbTRUNVgwenlBWU9veHp1TXlzeHBBc2E3MklaZnlFRWhOS0F2YTNROFUycmozSXBBRGdGVS1TZXZJZDJPcjAxMkNId3FqZFU3cWNR?oc=5",
@@ -5581,17 +5977,6 @@
     "title": "Yemen's Houthis warn Saudi airspace 'unsafe' in coming hours - LBCI Lebanon",
     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdmZtVjNST3MtZ2ZReGt2NFBoSGZiTWgxV0NCYXNBZGJpcGZRVk4tVnBtQ1ZXNEF2cUM4OGRQQmRheHFLX1A4YnBSaEJZM0dvV0VfS1h0aGREYVlNTnlFcUlXVjA2NWNkNmZ5c1YwTU55VFh4dmIwb09UbzRmcExBaU1vLXF2WkRaS3RRLURheks5T1RGY1d1WG5zSXFVMGExZGFnaHo0TlBiLUpBY2FGZQ?oc=5",
     "source": "LBCI Lebanon",
-    "tag": "other",
-    "cocom": "centcom",
-    "grade": "C3",
-    "reliability": "C",
-    "credibility": 3
-  },
-  {
-    "date": "2026-11-20T11:59:26Z",
-    "title": "UPDATES: US War on Iran, Day 268 \u2014 Houthi Missile Attacks on Saudi Arabia - EA WorldView",
-    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM2RrVEhkLTl5UDFBVUdjZ1NZTXN2RzgzSnhUUGZ3enFsWVA1ZllBbUc2QU9UNVpkcDN3UUFiMlpfVHZVVzBjYUtScVg1UDFMYmFNLXhjLVc5aG1xSjhRQ0J2ZXpNVHRYbEx2NmxrTXRlZ09BUHdqZ2tuTms2a3pNWGtR?oc=5",
-    "source": "EA WorldView",
     "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
@@ -12556,6 +12941,17 @@
     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1ralNvcWNINjUxbHBFZjh3RFRuYkFQei01TVhxUW01Z3h5eVdQenVSUHNidEpISHJVMFdtbXNvOXdKYWl5cEhCUXdrNHlNNFh5RlBnRmtMUlA?oc=5",
     "source": "TRT World",
     "tag": "naval",
+    "cocom": "centcom",
+    "grade": "C3",
+    "reliability": "C",
+    "credibility": 3
+  },
+  {
+    "date": "2026-11-18T09:01:00Z",
+    "title": "CENTCOM chief to meet military officials in Israel: Media - Al Arabiya English",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc3NoUUVld1N4cHp1dXVYM2dyVUVHVTF1NXhUSVBMSF9MU0VoWmNadU54a3lqVnh5Uzk4ZHFqclowOWRTMG4waTUycS1OSmFLOTIxT2N6WUxpaFNhWHZCLUZHTGlEbkZuS05uX2lVRDVPSWJyUVlzc1o3ckhGYzlFUFVBa2E2elVkS2tjRkZ4N0Q0Ykw0bGdSTk9BbUNzNXVsUEhLRlFjR1pLWko2WVlMUUhVQ2zSAboBQVVfeXFMTjF1OHlrb2UwUDB2YUxldG81VmtNTUFVc0FZMG02UU13QXRBM0taRkFOZTlJdWQzVzF5aWhtTjF4MW9DQXVLVVRISzJsaTdTZ0VCSV9DX1Jrb21aVHBoSW80X1ctZjJOOWNQLXJJT000X1RBRVFWU281bEk1di05TVIxMGFCci0zeG5UbGlCN19wYjNpTEhpOTJLV0I4QVhwQkZUNEhncTJFeWFjTUtJanBYalRUeFpJMnN3?oc=5",
+    "source": "Al Arabiya English",
+    "tag": "other",
     "cocom": "centcom",
     "grade": "C3",
     "reliability": "C",
